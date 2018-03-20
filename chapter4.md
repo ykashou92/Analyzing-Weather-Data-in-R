@@ -1,5 +1,5 @@
 ---
-title: VIsualizing Weather Data
+title: Visualizing Weather Data
 description: >-
   undefined
 
@@ -10,7 +10,7 @@ description: >-
 ```yaml
 type: NormalExercise
 
-xp: 
+xp: 100
 
 key: 18e324fda4
 ```
@@ -38,7 +38,7 @@ key: 18e324fda4
 ```yaml
 type: NormalExercise
 
-xp: 
+xp: 100
 
 key: 8b1536c0dc
 ```
@@ -66,7 +66,7 @@ key: 8b1536c0dc
 ```yaml
 type: NormalExercise
 
-xp: 
+xp: 100
 
 key: bf4fd75a71
 ```
@@ -94,7 +94,7 @@ key: bf4fd75a71
 ```yaml
 type: NormalExercise
 
-xp: 
+xp: 100
 
 key: 5e9efdfa1f
 ```
