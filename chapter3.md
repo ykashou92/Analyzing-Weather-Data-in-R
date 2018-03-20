@@ -4,4 +4,12 @@ description: >-
   Insert the chapter description here
 
 
+---
+## Mean and Median
+
+---
+## Correlation
+
+---
+##
 
