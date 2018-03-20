@@ -10,6 +10,7 @@ type: NormalExercise
 lang: r
 xp: 100
 skills: 1
+key: 33e93d2cb0
 ```
 
 Do some data science.
