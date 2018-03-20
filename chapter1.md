@@ -1,5 +1,5 @@
 ---
-title: Basic Operations
+title: Is it cloudy today?
 description: This is a template chapter.
 ---
 
