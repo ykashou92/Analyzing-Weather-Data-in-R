@@ -1,4 +1,4 @@
 title: Analyzing Weather Data in R
-description: A description of the course.
+description: A brief course on reading, cleaning, analyzing and visualizing weather data in R.
 programming_language: r
 from: 'r-base-prod:30'

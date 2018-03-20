@@ -1,5 +1,5 @@
 ---
-title: Template Chapter 1
+title: Basic Operations in R
 description: This is a template chapter.
 ---
 
