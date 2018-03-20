@@ -1,5 +1,4 @@
-# Course Title By The Instructor
-
+# Analyzing Weather Data in R
 Specs deadline: YYYY-MM-DD
 
 ## Course development resources
@@ -14,8 +13,10 @@ If you need assistance, please speak with your Curriculum Lead.*
 ## Step 1: Brainstorming
 
 ### 1. What problem(s) will students learn how to solve?
+Answer questions via data-driven analysis.
 
 ### 2. What techniques or concepts will students learn?
+
 
 ### 3. What technologies, packages, or functions will students use?
 
