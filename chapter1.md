@@ -28,12 +28,12 @@ Importing data in  **R** is very simple when using prepackaged libraries.
 
 
 `@pre_exercise_code`
-```{r}
+```{}
 load(url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat"))
 ```
 `@sample_code`
-```{r}
-df <- read.table("CR1000_OneHour.dat")
+```{}
+df <- read_csv("CR1000_OneHour.dat", sep=",")
 ```
 
 
