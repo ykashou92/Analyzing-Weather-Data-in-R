@@ -27,7 +27,10 @@ Importing data in  **R** is very simple when using prepackaged libraries.
 `@hint`
 
 
-
+`@pre_exercise_code`
+```{}
+load(url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat"))
+```
 `@sample_code`
 ```{}
 df <- read.table(CR1000_OneHour.dat)
