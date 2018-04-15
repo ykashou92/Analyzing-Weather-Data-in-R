@@ -20,9 +20,9 @@ We always begin by taking a look at the data and then asking a question. This qu
 `@instructions`
 We have three data files: 
 
-1. CR1000_OneHour.xlsx
-2.  CR1000_OneMin.xlsx
-3. CR1000_FifteenSec.xlsx
+- CR1000_OneHour.xlsx
+- CR1000_OneMin.xlsx
+- CR1000_FifteenSec.xlsx
 
 `@hint`
 
