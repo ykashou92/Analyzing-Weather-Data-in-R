@@ -18,11 +18,8 @@ key: 3938a0ce13
 We always begin the data science pipeline by asking a **question**. This question is what defines what we want to solve, or understand from the data.  However, we first need to take a see and explore our data.
 
 `@instructions`
-We have three data files: 
-
-- CR1000_OneHour.xlsx
-- CR1000_OneMin.xlsx
-- CR1000_FifteenSec.xlsx
+We have a single data file: 
+- CR1000_OneHour.dat
 
 
 Importing data in  **R** is very simple when using prepackaged libraries.
@@ -31,7 +28,10 @@ Importing data in  **R** is very simple when using prepackaged libraries.
 
 
 
-
+`@sample_code`
+```{}
+df <- read.table(CR1000_OneHour.dat)
+```
 
 
 
