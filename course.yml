@@ -1,4 +1,7 @@
 title: Analyzing Weather Data in R
-description: A brief course on reading, cleaning, analyzing and visualizing weather data in R.
+description: A brief course on reading, cleaning, analyzing and visualizing weather
+  data in R.
 programming_language: r
-from: 'r-base-prod:30'
+from: r-base-prod:30
+datasets:
+  CR1000_OneHour.dat: Cr1000 onehour
