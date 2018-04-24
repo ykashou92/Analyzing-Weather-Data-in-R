@@ -1,6 +1,8 @@
 title: Analyzing Weather Data in R
-description: A brief course on reading, cleaning, analyzing and visualizing weather
-  data in R.
+description: This course will introduce you to reading, cleaning, analyzing and visualizing weather
+  data in R. R is a powerful, data-driven language required by 64% of data science job postings in the US (2016-2017).
+  32% of data scientists started learning machine learning or data science through a MOOC, while 27% where self-taught (source - Kaggle, 2017)
+  
 programming_language: r
 from: r-base-prod:30
 datasets:
