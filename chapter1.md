@@ -122,7 +122,7 @@ key: 6e00a1acb2
 
 
 ---
-## Quiz Time!
+## Quiz Question: Taking a look!
 
 ```yaml
 type: MultipleChoiceExercise
@@ -269,7 +269,7 @@ key: 7d90552b7c
 
 
 ---
-## Insert exercise title here
+## Quiz Question: To the documentation we go!
 
 ```yaml
 type: MultipleChoiceExercise
@@ -291,8 +291,8 @@ Which are valid ways to import a comma-separated text file?
 `@instructions`
 1. 1 and 4
 2. 2 and 3
-3. 1, 2, 3, 4 and 5
-4. 4 and 5
+3. 4 and 5
+4. [1, 2, 3, 4 and 5]
 5. 2 and 4
 
 `@hint`
@@ -301,7 +301,12 @@ Remember that what `sep = ","` does!
 
 
 
-
+`@sct`
+```{r}
+msg1 <- "Correct! They all work!"
+msg2 <- "Incorrect! Read through the documentation.."
+test_mc(correct=4,  feedback_msgs = c(msg2, msg2, msg2, msg1, msg2))
+```
 
 
 
