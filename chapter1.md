@@ -191,7 +191,11 @@ We have not covered the list() function. Maybe it's another one?
 - tail(df, 3)
 
 `@feedbacks`
-test_output_contains(4, incorrect_msg = "Hmm, this does not seem right, might want to recheck your answer!")
-success_msg("Awesome! See how the console shows the result of the R code you submitted?")
+msg1 = "Incorrect. Python can do simple and quick calculations, but it is much more than that!"
+msg2 = "Incorrect. There is a very popular framework to build database-driven websites (Django), but Python can do much more."
+msg3 = "Incorrect. Python is a powerful tool to do data analysis, but you can also use it for other ends."
+msg4 = "Correct! Python is an extremely versatile language."
+msg5 = "Correct! Python is an extremely versatile language."
+test_mc(4, c(msg1, msg2, msg3, msg4, msg5))
 
 
