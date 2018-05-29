@@ -1,7 +1,7 @@
 ---
 title: Reading Data
 description: >-
-  Insert the chapter description here
+  This chapter covers reading in the data and learning more about the data frame that contains it.
 
 
 ---
@@ -106,6 +106,10 @@ key: 6e00a1acb2
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
@@ -176,6 +180,10 @@ Alright, so far, we have covered the following:
 - Changing the column names into a more human-readable form
 
 Well done! Now it is time to test your skills with a few multiple choice questions!
+
+Questions:
+1. How can I view the **first 7 rows** of a dataframe called `df`?
+2. How can I read a tab-separated file?
 
 
 
