@@ -38,7 +38,6 @@ Try importing our data `CR1000_OneHour.dat` and assigning it to a variable `df`!
 ```{r}
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat")
 x = 4 + 5
-print(data)
 ```
 `@sample_code`
 ```{r}
