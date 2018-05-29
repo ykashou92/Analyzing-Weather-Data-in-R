@@ -115,10 +115,10 @@ How can I view the **first 7 rows** of a dataframe called `df`?
 
 
 `@possible_answers`
-tail(df, 3)
-view(df, 7)
-[head(df, 7)]
-list(df, 7)
+- tail(df, 3)
+- view(df, 7)
+- [head(df, 7)]
+- list(df, 7)
 
 `@feedbacks`
 
