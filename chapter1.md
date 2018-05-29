@@ -190,7 +190,7 @@ Well done! Now it is time to test your skills with a few multiple choice questio
 ```yaml
 type: MultipleChoiceExercise
 
-xp: 100
+xp: 50
 
 key: 60ab93e5b8
 ```
@@ -219,6 +219,36 @@ msg4 <- "Incorrect. Have we even covered this yet?"
 
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
+
+
+
+
+
+
+***
+
+
+
+```yaml
+type: MultipleChoiceExercise
+
+xp: 50
+
+key: 7d90552b7c
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
 
 
 
