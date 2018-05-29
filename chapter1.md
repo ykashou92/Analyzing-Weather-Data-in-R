@@ -187,7 +187,7 @@ Which of the following functions can import a comma-separated text file?
 `@instructions`
 1. 1 and 4
 2. 2 and 3
-3. 4 and 5
+3. 1, 4 and 5
 4. [1, 2, 3, 4 and 5]
 5. 2 and 4
 
