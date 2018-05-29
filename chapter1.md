@@ -154,7 +154,7 @@ test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
 ---
-## Insert exercise title here
+## Chapter 1 Quiz!
 
 ```yaml
 type: TabExercise
@@ -164,7 +164,14 @@ xp: 100
 key: 3c239feb00
 ```
 
+Alright, so far, we have covered the following:
 
+- Importing a file into the R workspace as a Data Frame
+- Viewing the first and last rows
+- Displaying a summary of the data frame
+- Changing the column names into a more human-readable form
+
+Well done! Now it is time to test your skills with a few multiple choice questions!
 
 
 
