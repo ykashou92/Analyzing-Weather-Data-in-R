@@ -184,7 +184,7 @@ Well done! Now it is time to test your skills with a few multiple choice questio
 **Questions:**
 1. How can I view the **first 7 rows** of a dataframe called `df`?
 2. How can I read a tab-separated file?
-3. Open the link "https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html" and read through the **Usage** heading. Which are valid ways to import a comma-separated text file?
+
 3. What is a data frame?
 
 
@@ -253,11 +253,50 @@ key: 7d90552b7c
 
 
 `@instructions`
-- read.delim()
+
 
 `@hint`
 
 
+
+
+
+
+
+
+
+
+
+
+---
+## Insert exercise title here
+
+```yaml
+type: MultipleChoiceExercise
+
+xp: 50
+
+key: 2d492ae581
+```
+
+Open the link `https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html` and read through the **Usage** heading.
+
+Which are valid ways to import a comma-separated text file?
+1. read.table(...)
+2. read.csv(...)
+3. read.csv2(...)
+4. read.delim(...)
+5. read.delim2(...)
+
+`@instructions`
+1. 1 and 4
+2. 2 and 3
+3. 1, 2, 3, 4 and 5
+4. 4 and 5
+5. 2 and 4
+
+`@hint`
+Remember that what `sep = ","` does!
 
 
 
