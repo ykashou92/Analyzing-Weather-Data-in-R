@@ -29,7 +29,7 @@ Assuming you have a file named `sample.tsv` that is *tab-separated*, you can imp
 
 With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessary in this case.
 
-Modify the code on the right to work on the file mentioned above!
+Try importing our data `CR1000_OneHour.dat` and assigning it to a variable `df`!
 
 `@hint`
 
@@ -40,10 +40,16 @@ x <- read_table(url("https://assets.datacamp.com/production/repositories/2638/da
 ```
 `@sample_code`
 ```{r}
-sample_data <- read.delim("sample.tsv", sep = "\t")
+# sample_data <- read.delim("sample.tsv", sep = "\t")
 ```
-
-
+`@solution`
+```{r}
+df <- read.delim("CR1000_OneHour.dat", sep = ",")
+```
+`@sct`
+```{r}
+success_msg("Awesome! See how the console shows the result of the R code you submitted?")
+```
 
 
 
