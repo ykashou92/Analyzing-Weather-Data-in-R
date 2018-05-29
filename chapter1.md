@@ -15,17 +15,19 @@ xp: NaN
 key: 3938a0ce13
 ```
 
-We always begin the data science pipeline by asking a **question**. This question is what defines what we want to solve, or understand from the data.  However, we first need to take a see and explore our data.
+Alright! Let's begin!  
+We always begin the data science pipeline by asking a **question**. This question is what defines what we want to solve, or understand from the data. However, we first need to take a look and explore our data...
 
 `@instructions`
-We have a single data file: 
+We have a single data file (comma-separated): 
 - CR1000_OneHour.dat
 
-
-Importing data in  **R** is very simple when using prepackaged libraries.
+**R** has a function called `read.delim()` which can read any delimited text file, whether it is tab-delimited, comma-delimited, etc.. We would only need to specify the file, and the separator.
 
 `@hint`
 
+You can read a file `sample.dat` like so: `read.delim('sample.dat', sep = ',')`.
+And assign it to a variable like so: `s <- read.delim('sample.dat', sep = ',')`
 
 `@pre_exercise_code`
 ```{}
