@@ -78,10 +78,6 @@ key: 98b8ed2d89
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -126,6 +122,7 @@ msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N row
 msg3 <- "Correct! "
 msg4 <- "Incorrect. Have we even covered this yet?"
 
+
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
@@ -150,6 +147,46 @@ key: 6e00a1acb2
 
 
 
+
+
+
+
+
+---
+## Quiz Time!
+
+```yaml
+type: MultipleChoiceExercise
+
+xp: 50
+
+key: 1548cfd0ea
+```
+
+How can I view the **first 7 rows** of a dataframe called `df`?
+
+`@instructions`
+1. tail(df, 3)
+2. view(df, 7)
+3. [head(df, 7)]
+4. list(df, 7)
+
+`@hint`
+Remember our previous lessons. We took two functions: `head()` and `tail()`.
+
+
+
+
+`@sct`
+```{r}
+msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg3 <- "Correct! "
+msg4 <- "Incorrect. Have we even covered this yet?"
+
+
+test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
+```
 
 
 
