@@ -115,10 +115,10 @@ Remember our previous lessons. We took two functions: `head()` and `tail()`.
 
 
 `@possible_answers`
-- tail(df, 3)
-- view(df, 7)
-- [head(df, 7)]
-- list(df, 7)
+1. tail(df, 3)
+2. view(df, 7)
+3. [head(df, 7)]
+4. list(df, 7)
 
 `@feedbacks`
 msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
