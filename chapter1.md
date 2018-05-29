@@ -48,6 +48,9 @@ data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e
 
 # Change the following code such that it reads the 'data' variable into a variable calle 'df'
 ___ <- read.delim(file = ___, sep = ___)
+
+# The head() function displays the first 5 rows of the data frame.
+head(___)
 ```
 `@solution`
 ```{r}
