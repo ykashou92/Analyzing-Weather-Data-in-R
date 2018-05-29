@@ -41,7 +41,7 @@ x = 4 + 5
 ```
 `@sample_code`
 ```{r}
-# sample_data <- read.delim("sample.tsv", sep = "\t")
+# sample_data <- read.delim("sample.tsv", sep = "\t", quote='"', skip=4)
 ```
 `@solution`
 ```{r}
