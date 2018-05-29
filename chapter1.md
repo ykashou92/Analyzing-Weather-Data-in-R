@@ -184,6 +184,7 @@ Well done! Now it is time to test your skills with a few multiple choice questio
 **Questions:**
 1. How can I view the **first 7 rows** of a dataframe called `df`?
 2. How can I read a tab-separated file?
+3. Open the link "https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html" and read through the **Usage** heading. Which are valid ways to import a comma-separated text file?
 3. What is a data frame?
 
 
@@ -252,7 +253,7 @@ key: 7d90552b7c
 
 
 `@instructions`
-
+- read.delim()
 
 `@hint`
 
