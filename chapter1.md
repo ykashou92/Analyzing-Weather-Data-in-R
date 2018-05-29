@@ -10,7 +10,7 @@ description: >-
 ```yaml
 type: NormalExercise
 
-xp: NaN
+xp: 100
 
 key: 3938a0ce13
 ```
@@ -24,17 +24,18 @@ We have a single data file (comma-separated):
 
 **R** has a function called `read.delim()` which can read any delimited text file, whether it is tab-delimited, comma-delimited, etc.. We would only need to specify the file, and the separator.
 
-`@hint`
-
 You can read a file `sample.dat` like so: `read.delim('sample.dat', sep = ',')`.
 And assign it to a variable like so: `s <- read.delim('sample.dat', sep = ',')`
 
+`@hint`
+
+
 `@pre_exercise_code`
-```{}
+```{r}
 read_table(url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat"))
 ```
 `@sample_code`
-```{}
+```{r}
 df <- read_csv("CR1000_OneHour.dat", sep=",")
 ```
 
@@ -78,7 +79,6 @@ xp: 100
 skills: 1
 key: 56a2ee92da
 ```
-
 
 
 
