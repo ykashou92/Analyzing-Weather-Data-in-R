@@ -5,7 +5,7 @@ description: >-
 
 
 ---
-## Importing the Data
+## Let's Begin by Importing the Data into a DataFrame
 
 ```yaml
 type: NormalExercise
@@ -68,7 +68,7 @@ success_msg("Awesome! See how the console shows the result of the R code you sub
 
 
 ---
-## Viewing the last 10 Rows
+## How do we view the last 10 Rows?
 
 ```yaml
 type: NormalExercise
@@ -80,6 +80,10 @@ key: 98b8ed2d89
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
@@ -92,7 +96,7 @@ key: 98b8ed2d89
 
 
 ---
-## General Information
+## Let's do something about the column names!
 
 ```yaml
 type: NormalExercise
@@ -104,6 +108,10 @@ key: 56a2ee92da
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
