@@ -32,8 +32,6 @@ With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessa
 We preloaded the dataset into a variable called `data`
 This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` when assigning it to a variable `df`!
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -106,7 +104,7 @@ xp: 50
 key: 0335bebf09
 ```
 
-
+How can I view the **first 7 rows** of a dataframe called `df`?
 
 
 `@hint`
@@ -117,7 +115,10 @@ key: 0335bebf09
 
 
 `@possible_answers`
-
+tail(df, 3)
+view(df, 7)
+[head(df, 7)]
+list(df, 7)
 
 `@feedbacks`
 
@@ -138,10 +139,6 @@ key: 6e00a1acb2
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
