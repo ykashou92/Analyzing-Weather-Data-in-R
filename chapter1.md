@@ -160,3 +160,38 @@ success_msg("Awesome! See how the console shows the result of the R code you sub
 
 
 
+
+
+---
+## Insert exercise title here
+
+```yaml
+type: PureMultipleChoiceExercise
+
+xp: 50
+
+key: 0335bebf09
+```
+
+How do we view the first 7 rows of a Data Frame variable `df`?
+
+
+`@hint`
+We have not covered the list() function. Maybe it's another one?
+
+
+
+
+
+`@possible_answers`
+- view(df, 7)
+- list(df, 7)
+- head(df)
+- head(df, 7)   
+- tail(df, 3)
+
+`@feedbacks`
+test_output_contains(4, incorrect_msg = "Hmm, this does not seem right, might want to recheck your answer!")
+success_msg("Awesome! See how the console shows the result of the R code you submitted?")
+
+
