@@ -181,9 +181,10 @@ Alright, so far, we have covered the following:
 
 Well done! Now it is time to test your skills with a few multiple choice questions!
 
-Questions:
+**Questions:**
 1. How can I view the **first 7 rows** of a dataframe called `df`?
 2. How can I read a tab-separated file?
+3. What is a data frame?
 
 
 
