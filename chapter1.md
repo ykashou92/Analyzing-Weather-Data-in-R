@@ -121,7 +121,11 @@ How can I view the **first 7 rows** of a dataframe called `df`?
 - list(df, 7)
 
 `@feedbacks`
-
+msg1 = "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg2 = "Incorrect."
+msg3 = "Correct! "
+msg4 = "Incorrect. Have we even covered this yet?"
+test_mc(3, c(msg1, msg2, msg3, msg4))
 
 
 
