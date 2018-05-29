@@ -187,7 +187,7 @@ We have not covered the list() function. Maybe it's another one?
 - view(df, 7)
 - list(df, 7)
 - head(df)
-- head(df, 7)   
+- [head(df, 7)] 
 - tail(df, 3)
 
 `@feedbacks`
