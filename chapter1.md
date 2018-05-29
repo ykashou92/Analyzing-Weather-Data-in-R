@@ -125,7 +125,8 @@ msg1 = "Incorrect. Remember that the `tail()` function retrieves the last N rows
 msg2 = "Incorrect."
 msg3 = "Correct! "
 msg4 = "Incorrect. Have we even covered this yet?"
-test_mc(3, c(msg1, msg2, msg3, msg4))
+test_mc(3, incorrect_msg = c(msg1, msg2, msg3, msg4))
+success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 
 
 
