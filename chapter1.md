@@ -121,10 +121,10 @@ Remember our previous lessons. We took two functions: `head()` and `tail()`.
 - list(df, 7)
 
 `@feedbacks`
-msg1 = "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg2 = "Incorrect."
-msg3 = "Correct! "
-msg4 = "Incorrect. Have we even covered this yet?"
+msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg2 <- "Incorrect."
+msg3 <- "Correct! "
+msg4 <- "Incorrect. Have we even covered this yet?"
 
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4)
 
