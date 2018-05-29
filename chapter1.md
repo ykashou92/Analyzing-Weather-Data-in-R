@@ -41,6 +41,7 @@ x = 4 + 5
 ```
 `@sample_code`
 ```{r}
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 # sample_data <- read.delim("sample.tsv", sep = "\t")
 ```
 `@solution`
