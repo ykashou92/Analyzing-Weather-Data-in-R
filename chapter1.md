@@ -50,6 +50,7 @@ print(x)
 ```
 `@sct`
 ```{r}
+test_output_contains(9, incorrect_msg = "Make sure to add a line of R code that prints x")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
