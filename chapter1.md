@@ -281,12 +281,12 @@ key: 2d492ae581
 
 Open the link `https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html` and read through the **Usage** heading.
 
-Which are valid ways to import a comma-separated text file?
-1. read.table(...)
-2. read.csv(...)
-3. read.csv2(...)
-4. read.delim(...)
-5. read.delim2(...)
+Which of the following functions can import a comma-separated text file?
+1. `read.table(...)`
+2. `read.csv(...)`
+3. `read.csv2(...)`
+4. `read.delim(...)`
+5. `read.delim2(...)`
 
 `@instructions`
 1. 1 and 4
@@ -298,7 +298,10 @@ Which are valid ways to import a comma-separated text file?
 `@hint`
 Remember that what `sep = ","` does!
 
-
+`@pre_exercise_code`
+```{r}
+ 
+```
 
 
 `@sct`
