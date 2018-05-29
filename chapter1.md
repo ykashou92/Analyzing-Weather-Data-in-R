@@ -143,7 +143,10 @@ How can I view the **first 7 rows** of a dataframe called `df`?
 `@hint`
 Remember our previous lessons. We learned two functions: `head()` and `tail()`.
 
-
+`@pre_exercise_code`
+```{r}
+ 
+```
 
 
 `@sct`
@@ -156,113 +159,6 @@ msg4 <- "Incorrect. Have we even covered this yet?"
 
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
-
-
-
-
-
----
-## Chapter 1 Quiz!
-
-```yaml
-type: TabExercise
-
-xp: 100
-
-key: 3c239feb00
-```
-
-Alright, so far, we have covered the following:
-
-- Importing a file into the R workspace as a Data Frame
-- Viewing the first and last rows
-- Displaying a summary of the data frame
-- Changing the column names into a more human-readable form
-
-Well done! Now it is time to test your skills with a few multiple choice questions!
-
-**Questions:**
-1. How can I view the **first 7 rows** of a dataframe called `df`?
-2. How can I read a tab-separated file?
-
-3. What is a data frame?
-
-
-
-
-
-
-
-
-
-
-
-***
-
-
-
-```yaml
-type: MultipleChoiceExercise
-
-xp: 50
-
-key: 60ab93e5b8
-```
-
-
-
-`@instructions`
-1. tail(df, 3)
-2. view(df, 7)
-3. [head(df, 7)]
-4. list(df, 7)
-
-`@hint`
-
-
-
-
-
-`@sct`
-```{undefined}
-msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg3 <- "Correct! "
-msg4 <- "Incorrect. Have we even covered this yet?"
-
-test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
-```
-
-
-
-
-
-
-***
-
-
-
-```yaml
-type: MultipleChoiceExercise
-
-xp: 50
-
-key: 7d90552b7c
-```
-
-
-
-`@instructions`
-
-
-`@hint`
-
-
-
-
-
-
-
 
 
 
