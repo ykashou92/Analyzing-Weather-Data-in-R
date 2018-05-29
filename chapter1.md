@@ -32,6 +32,8 @@ With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessa
 We preloaded the dataset into a variable called `data`
 This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` when assigning it to a variable `df`!
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
