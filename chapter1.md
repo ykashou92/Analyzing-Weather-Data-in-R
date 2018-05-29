@@ -45,8 +45,8 @@ x = 4 + 5
 # This way, you can refer to the file as `data` instead of `CR1000_OneHour.dat`
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 
-# Try to adapt the following:
-# sample_data <- read.delim(file = "sample.tsv", sep = "\t")
+# Change the following code such that it reads the 'data' variable into a variable calle 'df'
+sample_data <- read.delim(file = "sample.tsv", sep = "\t")
 ```
 `@solution`
 ```{r}
