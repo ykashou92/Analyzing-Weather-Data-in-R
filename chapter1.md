@@ -36,8 +36,9 @@ Try importing our data `CR1000_OneHour.dat` and assigning it to a variable `df`!
 
 `@pre_exercise_code`
 ```{r}
-#x <- read_table(url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat"))
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/7a889124ca4aeb612a4067491b624d4797a16e50/CR1000_OneHour.dat")
 x = 4 + 5
+print(data)
 ```
 `@sample_code`
 ```{r}
@@ -45,11 +46,12 @@ x = 4 + 5
 ```
 `@solution`
 ```{r}
-df <- read.delim("CR1000_OneHour.dat", sep = ",")
-
+#df <- read.delim("CR1000_OneHour.dat", sep = ",")
+print(x)
 ```
 `@sct`
 ```{r}
+test_output_contains(9, incorrect_msg = "Make sure to add a line of R code that prints x")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
