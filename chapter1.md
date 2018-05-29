@@ -29,7 +29,8 @@ Assuming you have a file named `sample.tsv` that is *tab-separated*, you can imp
 
 With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessary in this case.
 
-Try importing our data `CR1000_OneHour.dat` and assigning it to a variable `df`!
+We preloaded the dataset into a variable called `data`
+This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` when assigning it to a variable `df`!
 
 `@hint`
 
@@ -55,7 +56,7 @@ print(x)
 ```
 `@sct`
 ```{r}
-test_output_contains(9, incorrect_msg = "Make sure to add a line of R code that prints x")
+test_output_contains(9, incorrect_msg = "")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
