@@ -78,6 +78,10 @@ key: 98b8ed2d89
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
@@ -133,7 +137,7 @@ How can I view the **first 7 rows** of a dataframe called `df`?
 4. list(df, 7)
 
 `@hint`
-Remember our previous lessons. We took two functions: `head()` and `tail()`.
+Remember our previous lessons. We learned two functions: `head()` and `tail()`.
 
 
 
@@ -215,7 +219,6 @@ msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N row
 msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
 msg3 <- "Correct! "
 msg4 <- "Incorrect. Have we even covered this yet?"
-
 
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
