@@ -96,74 +96,7 @@ key: 98b8ed2d89
 
 
 ---
-## Let's do something about the column names!
-
-```yaml
-type: NormalExercise
-lang: r
-xp: 100
-skills: 1
-key: 56a2ee92da
-```
-
-
-
-`@instructions`
-
-
-`@hint`
-
-
-
-
-
-
-
-
-
-
-
----
-## Insert exercise title here
-
-```yaml
-type: MultipleChoiceExercise
-
-xp: 50
-
-key: 6ea3ae7859
-```
-
-How do we view the first 7 rows of a Data Frame variable `df`?
-
-`@instructions`
-- view(df, 7)
-- list(df, 7)
-- head(df)
-- head(df, 7)   
-- tail(df, 3)
-
-`@hint`
-We have not covered the list() function. Maybe it's another one?
-
-`@pre_exercise_code`
-```{r}
-head(df, 7)
-```
-
-
-`@sct`
-```{r}
-test_output_contains(4, incorrect_msg = "Hmm, this does not seem right, might want to recheck your answer!")
-success_msg("Awesome! See how the console shows the result of the R code you submitted?")
-```
-
-
-
-
-
----
-## Insert exercise title here
+## Quiz Question 1!
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -173,29 +106,48 @@ xp: 50
 key: 0335bebf09
 ```
 
-How do we view the first 7 rows of a Data Frame variable `df`?
+
 
 
 `@hint`
-We have not covered the list() function. Maybe it's another one?
+
 
 
 
 
 
 `@possible_answers`
-- view(df, 7)
-- list(df, 7)
-- head(df)
-- [head(df, 7)] 
-- tail(df, 3)
+
 
 `@feedbacks`
-msg1 = "Incorrect. Python can do simple and quick calculations, but it is much more than that!"
-msg2 = "Incorrect. There is a very popular framework to build database-driven websites (Django), but Python can do much more."
-msg3 = "Incorrect. Python is a powerful tool to do data analysis, but you can also use it for other ends."
-msg4 = "Correct! Python is an extremely versatile language."
-msg5 = "Correct! Python is an extremely versatile language."
-test_mc(4, c(msg1, msg2, msg3, msg4, msg5))
+
+
+
+
+
+---
+## Let's do something about the column names!
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 6e00a1acb2
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
 
 
