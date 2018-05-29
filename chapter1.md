@@ -137,7 +137,11 @@ key: 6ea3ae7859
 How do we view the first 7 rows of a Data Frame variable `df`?
 
 `@instructions`
-view(df, 7), list(df, 7), head(df), head(df, 7), tail(df, 3)
+- view(df, 7)
+- list(df, 7)
+- head(df)
+- head(df, 7) 
+- tail(df, 3)
 
 `@hint`
 
