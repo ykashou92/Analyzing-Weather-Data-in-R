@@ -154,7 +154,7 @@ head(df, 7)
 
 `@sct`
 ```{r}
-test_output_contains(head(df, 7), incorrect_msg = "Hmm, this does not seem right, might want to recheck your answer!")
+test_output_contains("head(df, 7)", incorrect_msg = "Hmm, this does not seem right, might want to recheck your answer!")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
