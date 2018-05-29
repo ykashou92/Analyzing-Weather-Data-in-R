@@ -122,11 +122,11 @@ Remember our previous lessons. We took two functions: `head()` and `tail()`.
 
 `@feedbacks`
 msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg2 <- "Incorrect."
+msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
 msg3 <- "Correct! "
 msg4 <- "Incorrect. Have we even covered this yet?"
 
-test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4)
+test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
 
