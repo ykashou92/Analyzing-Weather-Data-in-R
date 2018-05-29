@@ -126,7 +126,7 @@ msg2 = "Incorrect."
 msg3 = "Correct! "
 msg4 = "Incorrect. Have we even covered this yet?"
 
-test_mc(correct=3, no_selection_msg = "Please choose an answer...", feedback_msgs = c(msg1, msg2, msg3, msg4)
+test_mc(correct=3, no_selection_msg = "Please choose an answer...", feedback_msg = c(msg1, msg2, msg3, msg4)
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 
 
