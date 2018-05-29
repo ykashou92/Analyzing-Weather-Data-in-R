@@ -90,45 +90,6 @@ key: 98b8ed2d89
 
 
 ---
-## Quiz Question 1!
-
-```yaml
-type: PureMultipleChoiceExercise
-
-xp: 50
-
-key: 0335bebf09
-```
-
-How can I view the **first 7 rows** of a dataframe called `df`?
-
-
-`@hint`
-Remember our previous lessons. We took two functions: `head()` and `tail()`.
-
-
-
-
-
-`@possible_answers`
-1. tail(df, 3)
-2. view(df, 7)
-3. [head(df, 7)]
-4. list(df, 7)
-
-`@feedbacks`
-msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
-msg3 <- "Correct! "
-msg4 <- "Incorrect. Have we even covered this yet?"
-
-
-test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
-
-
-
-
----
 ## Let's do something about the column names!
 
 ```yaml
@@ -187,6 +148,71 @@ msg4 <- "Incorrect. Have we even covered this yet?"
 
 test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
+
+
+
+
+
+---
+## Insert exercise title here
+
+```yaml
+type: TabExercise
+
+xp: 100
+
+key: 3c239feb00
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+
+
+```yaml
+type: MultipleChoiceExercise
+
+xp: 100
+
+key: 60ab93e5b8
+```
+
+
+
+`@instructions`
+1. tail(df, 3)
+2. view(df, 7)
+3. [head(df, 7)]
+4. list(df, 7)
+
+`@hint`
+
+
+
+
+
+`@sct`
+```{undefined}
+msg1 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg2 <- "Incorrect. Remember that the `tail()` function retrieves the last N rows."
+msg3 <- "Correct! "
+msg4 <- "Incorrect. Have we even covered this yet?"
+
+
+test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
+```
+
 
 
 
