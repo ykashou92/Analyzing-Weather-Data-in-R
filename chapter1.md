@@ -144,12 +144,18 @@ How do we view the first 7 rows of a Data Frame variable `df`?
 - tail(df, 3)
 
 `@hint`
+We have not covered the list() function. Maybe it's another one?
+
+`@pre_exercise_code`
+```{r}
+head(df, 7)
+```
 
 
-
-
-
-
+`@sct`
+```{r}
+head(df, 7)
+```
 
 
 
