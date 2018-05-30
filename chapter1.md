@@ -1,8 +1,7 @@
 ---
-title: Reading Data
-description: >-
-  This chapter covers reading in the data and learning more about the data frame that contains it.
-
+  title: "Reading Data"
+  description: "This chapter covers reading in the data and learning more about the data frame that contains it."
+  v2: true
 
 ---
 ## Let's Begin by Importing the Data into a DataFrame
@@ -13,6 +12,9 @@ type: NormalExercise
 xp: 100
 
 key: 3938a0ce13
+
+
+
 ```
 
 Alright! Let's begin!  
@@ -38,7 +40,6 @@ This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` 
 `@pre_exercise_code`
 ```{r}
 #data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-x = 4 + 5
 ```
 `@sample_code`
 ```{r}
@@ -54,12 +55,12 @@ head(___)
 ```
 `@solution`
 ```{r}
-#df <- read.delim("CR1000_OneHour.dat", sep = ",")
-print(x)
+df <- read.delim(file = data, sep = ",")
+head(df)
 ```
 `@sct`
 ```{r}
-test_output_contains(9, incorrect_msg = "")
+test_output_contains(head(df), incorrect_msg = "test")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
@@ -76,14 +77,13 @@ lang: r
 xp: 100
 skills: 1
 key: 98b8ed2d89
+
+
+
 ```
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -104,14 +104,13 @@ type: NormalExercise
 xp: 100
 
 key: 6e00a1acb2
+
+
+
 ```
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -132,6 +131,9 @@ type: MultipleChoiceExercise
 xp: 50
 
 key: 1548cfd0ea
+
+
+
 ```
 
 How can I view the **first 7 rows** of a dataframe called `df`?
@@ -145,10 +147,7 @@ How can I view the **first 7 rows** of a dataframe called `df`?
 `@hint`
 Remember our previous lessons. We learned two functions: `head()` and `tail()`.
 
-`@pre_exercise_code`
-```{r}
- 
-```
+
 
 
 `@sct`
@@ -175,6 +174,9 @@ type: MultipleChoiceExercise
 xp: 50
 
 key: 2d492ae581
+
+
+
 ```
 
 Open the link `https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html` and read through the **Usage** heading.
@@ -196,10 +198,7 @@ Which of the following functions can import a comma-separated text file?
 `@hint`
 Remember that what `sep = ","` does!
 
-`@pre_exercise_code`
-```{r}
- 
-```
+
 
 
 `@sct`
