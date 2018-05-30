@@ -19,20 +19,19 @@ key: 3938a0ce13
 
 Alright! Let's begin!  
 We always begin the data science pipeline by asking a **question**. This question is what defines what we want to solve, or understand from the data. However, we first need to take a look and explore our data...
-
-`@instructions`
 We have a single data file (comma-separated): 
 - CR1000_OneHour.dat
 
+We preloaded the dataset into a variable called `data`
+This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` when assigning it to a variable `df`!
+
+`@instructions`
 **R** has a function called `read.delim()` which can read any *delimited text file*, whether it is tab-delimited, comma-delimited, etc.. We would only need to specify the file, and the separator.
 
 Assuming you have a file named `sample.tsv` that is *tab-separated*, you can import the file into a variable named *sample_data* like so:    
-``sample_data <- read.delim("sample.tsv", sep = "\t")``.
+`sample_data <- read.delim("sample.tsv", sep = "\t")`.
 
 With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessary in this case.
-
-We preloaded the dataset into a variable called `data`
-This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` when assigning it to a variable `df`!
 
 `@hint`
 
