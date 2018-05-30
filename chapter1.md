@@ -39,7 +39,7 @@ This way, you can refer to the file as `data` instead of `"CR1000_OneHour.dat"` 
 
 `@pre_exercise_code`
 ```{r}
-#data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 ```
 `@sample_code`
 ```{r}
