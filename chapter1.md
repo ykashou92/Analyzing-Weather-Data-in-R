@@ -60,7 +60,7 @@ head(df)
 ```
 `@sct`
 ```{r}
-test_output_contains(head(df), incorrect_msg = "test")
+test_output_contains('head(df)', incorrect_msg = "test")
 success_msg("Awesome! See how the console shows the result of the R code you submitted?")
 ```
 
