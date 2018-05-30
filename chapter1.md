@@ -60,8 +60,10 @@ head(df)
 ```
 `@sct`
 ```{r}
-test_output_contains('head(df)', incorrect_msg = "test")
-success_msg("Awesome! See how the console shows the result of the R code you submitted?")
+test_output_contains('head(df)', incorrect_msg = "Are you sure you are referencing the data frame?")
+test_output_contains('df <- read.delim(file = data, sep = ",")', incorrect_msg = "Have you read the commented instructions?")
+test_output_contains('data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")', incorrect_msg = "Please make sure you have not changed the first line of code.")
+success_msg("Awesome!!! Let's proceed...")
 ```
 
 
