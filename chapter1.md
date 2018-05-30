@@ -1,5 +1,5 @@
 ---
-  title: "Reading Data"
+  title: "Data and R"
   description: "This chapter covers reading in the data and learning more about the data frame that contains it."
   v2: true
 
