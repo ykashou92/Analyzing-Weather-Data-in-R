@@ -60,8 +60,11 @@ head(df)
 `@sct`
 ```{r}
 test_output_contains('head(df)', incorrect_msg = "Are you sure you are referencing the data frame?")
+test_function("head()")
 test_output_contains('df <- read.delim(file = data, sep = ",")', incorrect_msg = "Have you read the commented instructions?")
+test_function("read.delim()")
 test_output_contains('data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")', incorrect_msg = "Please make sure you have not changed the first line of code.")
+test_function("url()")
 success_msg("Awesome!!! Let's proceed...")
 ```
 
