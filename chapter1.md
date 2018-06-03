@@ -36,7 +36,7 @@ key: 830ede0f90
 ```yaml
 type: NormalExercise
 
-xp: 50
+xp: 35
 
 key: a90b937acf
 
@@ -47,7 +47,7 @@ key: a90b937acf
 
 
 `@instructions`
-
+Assign 5 to the variable x
 
 `@hint`
 
@@ -69,7 +69,7 @@ key: a90b937acf
 ```yaml
 type: NormalExercise
 
-xp: 50
+xp: 35
 
 key: 2481ecd0fa
 
@@ -80,7 +80,40 @@ key: 2481ecd0fa
 
 
 `@instructions`
+Assign 6 to the variable y
 
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+
+
+```yaml
+type: NormalExercise
+
+xp: 30
+
+key: f6527c84f1
+
+
+
+```
+
+
+
+`@instructions`
+Write a string vector
 
 `@hint`
 
