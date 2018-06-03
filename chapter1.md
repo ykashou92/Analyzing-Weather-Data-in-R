@@ -47,10 +47,12 @@ key: a90b937acf
 
 
 `@instructions`
+If we want to store a variable, we can use `<-` or `=` to assign a value to a variable name.
+
 Assign 5 to the variable x
 
 `@hint`
-
+x <- c(1,2)
 
 
 
