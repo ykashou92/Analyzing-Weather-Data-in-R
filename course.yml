@@ -7,3 +7,6 @@ programming_language: r
 from: r-base-prod:30
 datasets:
   CR1000_OneHour.dat: Cr1000 onehour
+
+prerequisites:
+- 58 # Introduction to R
