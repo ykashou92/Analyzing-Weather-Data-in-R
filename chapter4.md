@@ -1,76 +1,145 @@
 ---
-title: Is is hotter or colder than normal?
+title: Where is the wind with the highest energy coming from?
 description: >-
-  Insert the chapter description here
+  undefined
+
 
 ---
-## Mean or Median
+## Line Plot
 
 ```yaml
 type: NormalExercise
-key: 251207dc0e
-lang: r
+
 xp: 100
-skills: 1
+
+key: 18e324fda4
 ```
+
 
 
 `@instructions`
 
+
 `@hint`
 
-`@pre_exercise_code`
-```{r}
 
-```
 
-`@sample_code`
-```{r}
 
-```
 
-`@solution`
-```{r}
 
-```
 
-`@sct`
-```{r}
 
-```
+
+
 
 ---
-## Correlations
+## Scatter Plot
 
 ```yaml
 type: NormalExercise
-key: 9fa53f15be
-lang: r
+
 xp: 100
-skills: 1
+
+key: 8b1536c0dc
 ```
+
 
 
 `@instructions`
 
+
 `@hint`
 
-`@pre_exercise_code`
-```{r}
 
+
+
+
+
+
+
+
+
+
+---
+## Step Plot
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: bf4fd75a71
 ```
 
-`@sample_code`
-```{r}
 
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+---
+## Wind/Pollution Rose
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 5e9efdfa1f
 ```
 
-`@solution`
-```{r}
+Meteorologists usually create a **pollution rose** or a **wind rose** in order to show the distribution of pollutants and particles in the air. These are beautiful plots that take into account the wind speed and direction.
 
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+---
+## Cloud Band Plot
+
+```yaml
+type: NormalExercise
+
+xp: 
+
+key: 535053d9cb
 ```
 
-`@sct`
-```{r}
 
-```
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
