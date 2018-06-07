@@ -252,6 +252,8 @@ library(reshape2)
 library(lubridate)
 
 # Type your answer on the next line
+___ <- ___(___)
+___ <- read.___(file = ___, sep = ___, skip = ___)
 ```
 `@solution`
 ```{r}
