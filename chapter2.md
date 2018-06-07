@@ -192,8 +192,6 @@ library(lubridate)
 #test_student_typed("library(reshape2)", "Did you import 'reshape2' correctly?")
 #test_student_typed("library(lubridate)", "Did you import 'lubridate' correctly?")
 test_output_contains('library(scales)', incorrect_msg = "Are you sure you are referencing the data frame?")
-test_function("library")
-
 test_function("library", "Did you call the library() function?")
 test_error()
 success_msg("Awesome! Let's proceed.")
