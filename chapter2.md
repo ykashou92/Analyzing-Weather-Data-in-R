@@ -186,7 +186,7 @@ library(lubridate)
 ```
 `@sct`
 ```{r}
-test_object("library", incorrect_msg = "Something is wrong with `my_vect`. Take another look at the instruction.")
+test_function("library", incorrect_msg = "Something is wrong with `my_vect`. Take another look at the instruction.")
 ```
 
 
