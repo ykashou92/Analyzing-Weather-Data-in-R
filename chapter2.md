@@ -289,19 +289,21 @@ key: 290e1b01ca
 
 ```
 
-We would like to rename the columns into something short and smart. If you take a look, we called the `head()` function on the dataframe `df`. Take a look at the column names.
+We would like to rename the columns into something short and smart. If you take a look, we called the `head()` function on the dataframe `df`. Take a look at the column names and how we will map them
 
-- TS (timestamp) ---> `ts`
-- RN (record number) ---> `rec`
-- meters.second (wind speed) ---> `ws`
-- Deg (wind direction) ---> `wd`
-- Deg.1 (wind direction - out of 100) ---> `wsc`
-- kW.m.2 (solar radiation) ---> `srad`
-- Deg.C (temperature in Celsius) ---> `temp`
-- X. (relative humidity) ---> `rh`
-- mm (millimeters of rainfall) ---> `rain` 
-- meters (visibility in meters [maximum is 75,000]) ---> `vis`
-- mbar (barometric pressure) ---> `bp`
+Original | Meaning | Mapping
+--- | --- | ---
+`TS` | timestamp | `ts`
+`RN` | record number | `rec`
+`meters.second` | wind speed | `ws`
+`Deg`  | wind direction | `wd`
+`Deg.1` | wind direction - out of 100 | `wsc`
+`kW.m.2` | solar radiation | `srad`
+`Deg.C` | temperature in Celsius | `temp`
+`X.` | relative humidity | `rh`
+`mm` | millimeters of rainfall | `rain` 
+`meters` | visibility in meters [maximum is 75,000] | `vis`
+`mbar` | barometric pressure | `bp`
 
 
 `@instructions`
@@ -350,6 +352,16 @@ ___(df) = cols
 ```
 `@solution`
 ```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
+
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df)= cols
 ```
