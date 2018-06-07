@@ -154,7 +154,7 @@ key: c7a40a5a73
 
 To build our plot, we first need to import a few libraries.
 
-One can import a library (for instance: the library **rvest**) like so:
+One can import a library (for instance: the library **rvest**) like so:  
 `library(rvest)`
 
 `@instructions`
