@@ -4,7 +4,7 @@
   v2: true
 
 ---
-## Let's Begin by Importing the Data into a DataFrame
+## The Data!
 
 ```yaml
 type: NormalExercise
@@ -92,10 +92,6 @@ key: 98b8ed2d89
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
