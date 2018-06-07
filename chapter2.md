@@ -179,18 +179,18 @@ Import them like in the example.
 ```
 `@solution`
 ```{r}
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
+library("scales")
+library("ggplot2")
+library("reshape2")
+library("lubridate")
 ```
 `@sct`
 ```{r}
-test_function("library", args = "object",
-              not_called_msg = "You didn't call `library()`!",
-              incorrect_msg = "You didn't call `library(...)` with the correct argument.")
+#test_function("library", args = "object",
+#              not_called_msg = "You didn't call `library()`!",
+#              incorrect_msg = "You didn't call `library(...)` with the correct argument.")
 
-
+test_function("library", args = c("scales", "ggplot2", "reshape2", "lubridate"))
 
 #test_function("library", "Did you call the library() function?")
 test_error()
