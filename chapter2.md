@@ -58,16 +58,20 @@ xdf$avg <- (xdf$max + xdf$min) / 2
 xdf <- data.frame(xdf)
 
 # Visualize the cloud bands 
-ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
+p <- ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) +
   geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
   geom_pointrange(color = "black", size= 0.75) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) +
   ylim(0, 50) +
-  theme_minimal() +
+  xlab("Date") +
   ylab("Air Temperature") +
+  ggtitle("The cloudier the day, the narrower the band") +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=45)) +
   theme(axis.title.x=element_blank())
+p
 ```
 `@solution`
 ```{r}
