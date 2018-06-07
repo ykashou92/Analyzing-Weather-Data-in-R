@@ -186,13 +186,13 @@ library(lubridate)
 ```
 `@sct`
 ```{r}
+test_function("library", args = c("scales", "ggplot2", "reshape2", "lubridate"),
+              not_called_msg = "You didn't call `library()`!",
+              incorrect_msg = "You didn't call `library(...)` with the correct argument.")
+
+
+
 #test_function("library", "Did you call the library() function?")
-#test_student_typed("library(scales)", "Did you import 'scales' correctly?")
-#test_student_typed("library(ggplot2)", "Did you import 'ggplot2' correctly?")
-#test_student_typed("library(reshape2)", "Did you import 'reshape2' correctly?")
-#test_student_typed("library(lubridate)", "Did you import 'lubridate' correctly?")
-test_student_typed("library(scales)", incorrect_msg = "Are you sure you are referencing the data frame?")
-test_function("library", "Did you call the library() function?")
 test_error()
 success_msg("Awesome! Let's proceed.")
 ```
