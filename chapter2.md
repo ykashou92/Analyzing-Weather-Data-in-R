@@ -168,7 +168,7 @@ The libraries we need are:
 Import them like in the example.
 
 `@hint`
-You can write each import on separate lines in any order you wish.
+You can write each import on a separate line and in any order you wish.
 
 
 `@sample_code`
