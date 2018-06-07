@@ -168,7 +168,7 @@ The libraries we need are:
 Import them like in the example.
 
 `@hint`
-
+You can write each import on separate lines in any order you wish.
 
 
 `@sample_code`
@@ -186,10 +186,10 @@ library(lubridate)
 ```
 `@sct`
 ```{r}
-test_student_typed("library(scales)", not_typed_msg="Did you import `scales` correctly?")
-test_student_typed("library(ggplot2)", not_typed_msg="Did you import `ggplot2` correctly?")
-test_student_typed("library(reshape2)", not_typed_msg="Did you import `reshape2` correctly?")
-test_student_typed("library(lubridate)", not_typed_msg="Did you import `lubridate` correctly?")
+test_student_typed("library(scales)", not_typed_msg="Did you import `scales`?")
+test_student_typed("library(ggplot2)", not_typed_msg="Did you import `ggplot2`?")
+test_student_typed("library(reshape2)", not_typed_msg="Did you import `reshape2`?")
+test_student_typed("library(lubridate)", not_typed_msg="Did you import `lubridate`?")
 
 #test_function("library", "Did you call the library() function?")
 test_error()
