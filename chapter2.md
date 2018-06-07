@@ -36,13 +36,14 @@ x <- 0
 ```
 `@sample_code`
 ```{r}
+# Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)   
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
-colnames(df)= cols
+colnames(df) = cols
 
-subtract_month <- tail(df$ts, 1) %m-% months(1)
-df <- subset(df, ts > subtract_month)
+# Subset and prepare the data
+df <- tail(df, 240)
 df$day <- factor(df$ts)
 t0 <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$day <- format(t0, "%Y-%m-%d")
@@ -56,12 +57,14 @@ xdf$min <- df_agg$x[, 2]
 xdf$avg <- (xdf$max + xdf$min) / 2
 xdf <- data.frame(xdf)
 
+# Visualize the cloud bands 
 ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
-  geom_line(aes(y = max), color = "steelblue", size = 1, group = 1) +
+  geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) +
   geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
   geom_pointrange(color = "black", size= 0.75) +
-  geom_point(aes(y = max), color = "steelblue", size = 3.5) +
+  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) +
+  ylim(0, 50) +
   theme_minimal() +
   ylab("Air Temperature") +
   theme(axis.title.x=element_blank())
