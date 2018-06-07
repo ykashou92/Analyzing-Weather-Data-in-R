@@ -291,11 +291,22 @@ key: 290e1b01ca
 
 We would like to rename the columns into something short and smart. If you take a look, we called the `head()` function on the dataframe `df`. Take a look at the column names.
 
+- TS (timestamp) ---> `ts`
+- RN (record number) ---> `rec`
+- meters.second (wind speed) ---> `ws`
+- Deg (wind direction) ---> `wd`
+- Deg.1 (wind direction - out of 100) ---> `wsc`
+- kW.m.2 (solar radiation) ---> `srad`
+- Deg.C (temperature in Celsius) ---> `temp`
+- X. (relative humidity) ---> `rh`
+- mm (millimeters of rainfall) ---> `rain` 
+- meters (visibility in meters [maximum is 75,000]) ---> `vis`
+- mbar (barometric pressure) ---> `bp`
+
+
 `@instructions`
 Assign the new column names  instead of the original ones. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
-
-ts
 
 `@hint`
 
@@ -313,7 +324,7 @@ data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e
 df <- read.delim(file = data, sep = ",", skip=1)  
 
 # Take a look at the first 3 rows to better understand the column names.
-head(df, 3)
+print(head(df, 3))
 ```
 `@sample_code`
 ```{r}
@@ -328,7 +339,7 @@ data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e
 df <- read.delim(file = data, sep = ",", skip=1)  
 
 # Take a look at the first 3 rows to better understand the column names.
-head(df, 3)
+print(head(df, 3))
 
 # Write your code here:
 # You need to concatenate the strings.
