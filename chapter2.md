@@ -233,7 +233,7 @@ You will be using two functions to perform this; `url(...)` and `read.delim(file
 - Lastly, assign the output to a variable called `df`.
 
 `@hint`
-Remember than you need to save the output of the `url(...)` function to a variable. And THEN pass it into the `file = ...` argument of `read.delim`.
+Remember that you need to save the output of the `url(...)` function to a variable. And THEN pass it into the `file = ...` argument of `read.delim`.
 
 `@pre_exercise_code`
 ```{r}
