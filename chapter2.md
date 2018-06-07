@@ -186,7 +186,7 @@ library(lubridate)
 ```
 `@sct`
 ```{r}
-test_function("library", args = c("scales", "ggplot2", "reshape2", "lubridate"),
+test_function("library", args = "object",
               not_called_msg = "You didn't call `library()`!",
               incorrect_msg = "You didn't call `library(...)` with the correct argument.")
 
