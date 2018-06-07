@@ -160,10 +160,10 @@ One can import a library (for instance: the library **rvest**) like so:
 `@instructions`
 The libraries we need are:
 
-- **scales**
-- **ggplot2**
-- **reshape2** 
-- **lubridate**
+- **scales** To change and modify the scaling of the plot  
+- **ggplot2** To actually build the plot using a "grammar of graphics"  
+- **reshape2** To reshape our data  
+- **lubridate** To manipulate data concerning date and time  
 
 Import them like in the example.
 
@@ -187,9 +187,9 @@ library(lubridate)
 `@sct`
 ```{r}
 test_student_typed("library(scales)", not_typed_msg="Did you import `scales` correctly?")
- #                  "library(ggplot2)", 
- #                  "library(reshape2)", 
- #                  "library(lubridate)")
+test_student_typed("library(ggplot2)", not_typed_msg="Did you import `ggplot2` correctly?")
+test_student_typed("library(reshape2)", not_typed_msg="Did you import `reshape2` correctly?")
+test_student_typed("library(lubridate)", not_typed_msg="Did you import `lubridate` correctly?")
 
 #test_function("library", "Did you call the library() function?")
 test_error()
