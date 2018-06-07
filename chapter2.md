@@ -32,7 +32,10 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
-
+x <- 0
+```
+`@sample_code`
+```{r}
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)   
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
@@ -62,17 +65,14 @@ ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   theme_minimal() +
   ylab("Air Temperature") +
   theme(axis.title.x=element_blank())
-
-x <- 0
 ```
-
 `@solution`
 ```{r}
 print(x)
 ```
 `@sct`
 ```{r}
-success_msg("Nice work! Success messages are a great way to keep users engaged even after the exercise is over. Try to encourage them to play around in the console to really grasp the concepts you're trying to teach!")
+success_msg(`test_student_typed`, "Nice work! Success messages are a great way to keep users engaged even after the exercise is over. Try to encourage them to play around in the console to really grasp the concepts you're trying to teach!")
 ```
 
 
