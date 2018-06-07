@@ -160,10 +160,10 @@ One can import a library (for instance: the library **rvest**) like so:
 `@instructions`
 The libraries we need are:
 
-**scales**
-**ggplot2**
- **reshape2** 
- **lubridate**
+- **scales**
+- **ggplot2**
+- **reshape2** 
+- **lubridate**
 
 Import them like in the example.
 
