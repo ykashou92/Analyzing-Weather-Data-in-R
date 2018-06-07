@@ -139,7 +139,7 @@ success_msg("Alright! Let's get to it!")
 
 
 ---
-## Insert exercise title here
+## Importing the Libraries
 
 ```yaml
 type: NormalExercise
@@ -147,6 +147,382 @@ type: NormalExercise
 xp: 100
 
 key: c7a40a5a73
+
+
+
+```
+
+To build our plot, we first need to import a few libraries.
+
+One can import a library (for instance: the library **rvest**) like so:
+`library(rvest)`
+
+`@instructions`
+The libraries we need are:
+
+**scales**
+**ggplot2**
+ **reshape2** 
+ **lubridate**
+
+Import them like in the example.
+
+`@hint`
+
+
+
+`@sample_code`
+```{r}
+# This is how we import libraries in R
+# library(rvest)
+
+```
+`@solution`
+```{r}
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+```
+`@sct`
+```{r}
+test_object("library", incorrect_msg = "Something is wrong with `my_vect`. Take another look at the instruction.")
+```
+
+
+
+
+
+
+---
+## Reading the Data
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 768d0c5d2f
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Renaming the Columns
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 290e1b01ca
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Choosing our Data
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 400058a13c
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Formatting the 'Timestamp' Column
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 88f9897b09
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Finding the Minimum and Maximum Temperatures Per Day
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: fba56b2895
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Finding the Average Temperature Per Day
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: a87cae653d
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Plotting: The axes
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 3af49d5904
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Plotting: The data points
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: e578c9252b
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Plotting: The lines
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: af34272c37
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Plotting: The Pointrange
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 1e7e2be896
+
+
+
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Plotting: Interactivity with ggplotly
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 01f706ea05
 
 
 
