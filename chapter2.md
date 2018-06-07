@@ -251,7 +251,7 @@ library(ggplot2)
 library(reshape2)
 library(lubridate)
 
-# Type your answer on the next line
+# Fill in the blanks!
 ___ <- ___(___)
 ___ <- read.___(file = ___, sep = ___, skip = ___)
 ```
@@ -289,18 +289,56 @@ key: 290e1b01ca
 
 ```
 
-
+We would like to rename the columns into something short and smart. If you take a look, we called the `head()` function on the dataframe `df`. Take a look at the column names.
 
 `@instructions`
+Assign the new column names  instead of the original ones. You can copy and paste them.
+`"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
+ts
 
 `@hint`
 
 
+`@pre_exercise_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
 
+head(df)
+```
+`@sample_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
+```
+`@solution`
+```{r}
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df)= cols
+```
+`@sct`
+```{r}
+test_object("cols", incorrect_msg = "Something is wrong with `data`. Make sure you copied the column names correctly.")
+test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
 
+test_error()
+success_msg("`Nice! We are one step closer. Let's continue...")
+```
 
 
 
