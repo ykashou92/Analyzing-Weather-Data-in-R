@@ -186,7 +186,11 @@ library(lubridate)
 ```
 `@sct`
 ```{r}
-test_function("library", incorrect_msg = "Something is wrong with `my_vect`. Take another look at the instruction.")
+test_function("library", "Did you call the library() function?")
+test_student_typed("library(scales)", "Did you import 'scales' correctly?")
+test_student_typed("library(ggplot2)", "Did you import 'ggplot2' correctly?")
+test_student_typed("library(reshape2)", "Did you import 'reshape2' correctly?")
+test_student_typed("library(lubridate)", "Did you import 'lubridate' correctly?")
 ```
 
 
