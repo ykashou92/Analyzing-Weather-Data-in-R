@@ -31,7 +31,11 @@ library(reshape2)
 library(lubridate)
 
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",")    
+df <- read.delim(file = data, sep = ",", skip=1)   
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df)= cols
+
+
 subtract_month <- tail(df$ts, 1) %m-% months(1)
 df <- subset(df, ts > subtract_month)
 df$day <- factor(df$ts)
@@ -55,7 +59,7 @@ ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) +
   theme_minimal() +
   ylab("Air Temperature") +
-theme(axis.title.x=element_blank())
+  theme(axis.title.x=element_blank())
 ```
 
 `@sample_code`
