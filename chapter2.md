@@ -190,8 +190,8 @@ library("lubridate")
 #              not_called_msg = "You didn't call `library()`!",
 #              incorrect_msg = "You didn't call `library(...)` with the correct argument.")
 
-test_function("library", args = c("scales", "ggplot2", "reshape2", "lubridate"))
-
+#test_function("library", args = c("scales", "ggplot2", "reshape2", "lubridate"))
+test_student_typed("library(scales)", not_typed_msg = "eerrorr") 
 #test_function("library", "Did you call the library() function?")
 test_error()
 success_msg("Awesome! Let's proceed.")
