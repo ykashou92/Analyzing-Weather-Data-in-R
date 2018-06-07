@@ -30,10 +30,15 @@ library(ggplot2)
 library(reshape2)
 library(lubridate)
 
-data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/c27530bb9d42c438cee870b37109229c76fd2a4c/CR1000_OneMin.dat")
 df <- read.delim(file = data, sep = ",", skip=1)   
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df)= cols
+
+df_DT <- as.POSIXct(df$ts, format="%Y-%m-%d %H:%M:%S", tz="EET")
+df[-2] <- data.frame(sapply(df[-2], as.numeric))
+df$ts <- df_DT
+df <- df[order(df$ts),]
 
 
 subtract_month <- tail(df$ts, 1) %m-% months(1)
