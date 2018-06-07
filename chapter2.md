@@ -224,13 +224,13 @@ Our data is hosted on "https://assets.datacamp.com/production/repositories/2638/
 You will be using two functions to perform this; `url(...)` and `read.delim(file = ..., sep = ..., skip = ...)`
 
 ### `url(...)`
-1. Use the `url(...)` function on the link above and assign it to a variable called `data`.
+- Use the `url(...)` function on the link above and assign it to a variable called `data`.
 
 ### `read.delim(...)`
-2. Use the `read.delim(...)` function to read from the variable you stored in the previous step.
-3. Don't forget to declare what separates the columns of our data (our file is comma-separated)
-4. And lastly, you'd want to skip the first line as it is obscure and unneeded.
-5. Assign to a variable called `df`.
+- Use the `read.delim(...)` function to read from the variable you stored.
+- Don't forget to declare the separator (our file is comma-separated)
+- You'd also want to `skip` the _first_ line as it is obscure and unneeded.
+- Lastly, assign the output to a variable called `df`.
 
 `@hint`
 Remember than you need to save the output of the `url(...)` function to a variable. And THEN pass it into the `file = ...` argument of `read.delim`.
@@ -263,9 +263,8 @@ df <- read.delim(file = data, sep = ",", skip=1)
 ```
 `@sct`
 ```{r}
-test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you've assigned the correct value to the variable.")
-test_object("df", incorrect_msg = "Something is wrong with `data`. Make sure you've assigned the correct value to the variable.")
-
+test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you included the quotation marks `"..."` in the link.")
+test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
 success_msg("`Nice! You have been following through. Let's continue...")
