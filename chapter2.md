@@ -263,7 +263,7 @@ df <- read.delim(file = data, sep = ",", skip=1)
 ```
 `@sct`
 ```{r}
-test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you included the quotation marks `"..."` in the link.")
+test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you included the quotation marks in the link.")
 test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
