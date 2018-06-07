@@ -312,7 +312,8 @@ library(lubridate)
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)  
 
-head(df)
+# Take a look at the first 3 rows to better understand the column names.
+head(df, 3)
 ```
 `@sample_code`
 ```{r}
@@ -325,6 +326,16 @@ library(lubridate)
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)  
+
+# Take a look at the first 3 rows to better understand the column names.
+head(df, 3)
+
+# Write your code here:
+# You need to concatenate the strings.
+cols <- c(___, ___, ...)
+
+# The function to change the colnames of a dataframe is called `colnames(...)`
+___(df) = cols
 ```
 `@solution`
 ```{r}
