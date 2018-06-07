@@ -38,7 +38,6 @@ df <- read.delim(file = data, sep = ",", skip=1)
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df)= cols
 
-
 subtract_month <- tail(df$ts, 1) %m-% months(1)
 df <- subset(df, ts > subtract_month)
 df$day <- factor(df$ts)
@@ -71,7 +70,10 @@ x <- 0
 ```{r}
 print(x)
 ```
-
+`@sct`
+```{r}
+success_msg("Nice work! Success messages are a great way to keep users engaged even after the exercise is over. Try to encourage them to play around in the console to really grasp the concepts you're trying to teach!")
+```
 
 
 

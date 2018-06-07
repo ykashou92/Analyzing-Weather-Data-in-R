@@ -75,6 +75,7 @@ success_msg("Awesome!!! Let's proceed...")
 
 
 
+
 ---
 ## How do we view the last 10 Rows?
 
@@ -106,6 +107,7 @@ key: 98b8ed2d89
 
 
 
+
 ---
 ## Let's do something about the column names!
 
@@ -122,10 +124,7 @@ key: 6e00a1acb2
 
 
 
-`@instructions`
 
-
-`@hint`
 
 
 
@@ -180,6 +179,7 @@ test_mc(correct=3,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
 
+
 ---
 ## Quiz Question: To the documentation we go!
 
@@ -222,6 +222,7 @@ msg1 <- "Correct! They all work!"
 msg2 <- "Incorrect! Read through the documentation.."
 test_mc(correct=4,  feedback_msgs = c(msg2, msg2, msg2, msg1, msg2))
 ```
+
 
 
 
