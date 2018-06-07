@@ -215,18 +215,59 @@ key: 768d0c5d2f
 
 ```
 
+Now it's time to import our data like we learned in the first chapter.
+The libraries have already been imported in the background, but we kept the code visible to you so you can keep track of the whole process.
 
+Our data is hosted on "https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat"
 
 `@instructions`
+You will be using two functions to perform this; `url(...)` and `read.delim(file = ..., sep = ..., skip = ...)`
 
+### `url(...)`
+1. Use the `url(...)` function on the link above and assign it to a variable called `data`.
+
+### `read.delim(...)`
+2. Use the `read.delim(...)` function to read from the variable you stored in the previous step.
+3. Don't forget to declare what separates the columns of our data (our file is comma-separated)
+4. And lastly, you'd want to skip the first line as it is obscure and unneeded.
+5. Assign to a variable called `df`.
 
 `@hint`
+Remember than you need to save the output of the `url(...)` function to a variable. And THEN pass it into the `file = ...` argument of `read.delim`.
+
+`@pre_exercise_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+```
+`@sample_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+
+# Type your answer on the next line
+```
+`@solution`
+```{r}
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)   
+```
+`@sct`
+```{r}
+test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you've assigned the correct value to the variable.")
+test_object("df", incorrect_msg = "Something is wrong with `data`. Make sure you've assigned the correct value to the variable.")
 
 
-
-
-
-
+test_error()
+success_msg("`Nice! You have been following through. Let's continue...")
+```
 
 
 
