@@ -389,9 +389,16 @@ key: 400058a13c
 
 ```
 
+So we have the data. Now we ask: What parts of these data do we need? Now we are going to visualize temperature over a period of time. Hence we need to select the columns we need and the number of rows we need as well so that we have an aesthetic graph that is easy to read and fast to run.
 
+`@instructions`
+We created a new dataframe for you called `df_new`,  and we copied the timestamp (`ts`) column for you. Here's what you should do:
 
+- Copy `temp` column from the old dataframe to the new one.
+- Subset the last 10 days.
 
+`@hint`
+The `tail(...)` function can select the last N rows and we are dealing with hourly data. How many rows will represent that last 10-day period?
 
 
 
@@ -419,6 +426,10 @@ key: 88f9897b09
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
