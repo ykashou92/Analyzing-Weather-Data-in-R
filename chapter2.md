@@ -395,9 +395,9 @@ key: 400058a13c
 So we have the data. Now we ask: What parts of these data do we need? Now we are going to visualize temperature over a period of time. Hence we need to select the columns we need and the number of rows we need as well so that we have an aesthetic graph that is easy to read and fast to run.
 
 `@instructions`
-We created a new dataframe for you called `df_new`,  and we copied the timestamp (`ts`) column for you. Here's what you should do:
+Here's what you should do:
 
-- Copy `temp` column from the old dataframe to the new one.
+- Select the `ts` and `temp` columns from the dataframe and assign it to variable `df` (hence replacing the old one)
 - Subset the last 10 days.
 
 `@hint`
@@ -415,12 +415,54 @@ library(lubridate)
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)  
 
+# Assign those cool columns names
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
-
-df_new = df$ts
+colnames(df) <- cols
 ```
+`@sample_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
 
+# Assign those cool columns names
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) <- cols
+
+# Use dplyr's select functions
+___ <- ___(df, c(___, ___))
+
+# Subset the last 10 days
+___ <- tail(df, ___)
+```
+`@solution`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
+
+# Assign those cool columns names
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) <- cols
+
+# Use dplyr's select functions
+df <- dplyr::select(df, c(ts, temp))
+
+# Subset the last 10 days
+df <- tail(df, 240)
+```
 
 
 
