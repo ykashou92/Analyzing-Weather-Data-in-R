@@ -323,9 +323,6 @@ library(lubridate)
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)  
 
-# Take a look at the first 3 rows to better understand the column names.
-#print(head(df, 3))
-colnames(df)
 ```
 `@sample_code`
 ```{r}
