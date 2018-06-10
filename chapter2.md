@@ -414,6 +414,7 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
@@ -430,6 +431,7 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
@@ -455,6 +457,7 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
