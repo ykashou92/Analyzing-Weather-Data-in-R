@@ -288,21 +288,21 @@ key: 290e1b01ca
 
 ```
 
-We would like to rename the columns into something short and smart. If you take a look, we called the `head()` function on the dataframe `df`. Take a look at the column names and how we will map them
+We would like to rename the columns into something short and smart. Use the console to take a look at the column names and how we will map them by calling `head(df, 2)`
 
-Original | Meaning | Mapping
---- | --- | ---
-`TS` | timestamp | `ts`
-`RN` | record number | `rec`
-`meters.second` | wind speed | `ws`
-`Deg`  | wind direction | `wd`
-`Deg.1` | wind direction - out of 100 | `wsc`
-`kW.m.2` | solar radiation | `srad`
-`Deg.C` | temperature in Celsius | `temp`
-`X.` | relative humidity | `rh`
-`mm` | millimeters of rainfall | `rain` 
-`meters` | visibility in meters [maximum is 75,000] | `vis`
-`mbar` | barometric pressure | `bp`
+Original | Mapping | Meaning | Unit
+--- | --- | --- | ---
+`TS` | `ts`  | Timestamp  | YYYY-MM-DD hh:mm:ss
+`RN` |  `rec` | Record number | None
+`meters.second` |  `ws` | wind speed | Meters per Second
+`Deg`  | `wd` | Wind direction | Degree
+`Deg.1` | `wsc`  | Wind direction | None (scaled out of 100)
+`kW.m.2` | `srad` | Solar radiation | Kilowatts per Meter Squared
+`Deg.C` | `temp` | Temperature | Celsius
+`X.` | `rh` | Relative humidity | None (Measured as a Ratio) %
+`mm` | `rain`  | Rainfall | Millimeters
+`meters` | `vis` | Visibility | Meters (maximum is 75,000)
+`mbar` | `bp` | Barometric Pressure | Millibar
 
 `@instructions`
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
@@ -325,7 +325,7 @@ df <- read.delim(file = data, sep = ",", skip=1)
 
 # Take a look at the first 3 rows to better understand the column names.
 #print(head(df, 3))
-df
+colnames(df)
 ```
 `@sample_code`
 ```{r}
@@ -339,8 +339,8 @@ library(lubridate)
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)  
 
-# Take a look at the first 3 rows to better understand the column names.
-print(head(df, 3))
+# Copy the following line into the console and press 'Enter'
+head(df, 2)
 
 # Write your code here:
 # You need to concatenate the strings.
