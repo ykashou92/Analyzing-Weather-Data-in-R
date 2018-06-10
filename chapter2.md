@@ -164,6 +164,7 @@ The libraries we need are:
 - **ggplot2** To actually build the plot using a "grammar of graphics"  
 - **reshape2** To reshape our data  
 - **lubridate** To manipulate data concerning date and time  
+- **dplyr** To easily select columns from the dataframe
 
 Import them like in the example.
 
@@ -182,6 +183,7 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 ```
 `@sct`
 ```{r}
@@ -189,6 +191,7 @@ test_student_typed("library(scales)", not_typed_msg="Did you import `scales`?")
 test_student_typed("library(ggplot2)", not_typed_msg="Did you import `ggplot2`?")
 test_student_typed("library(reshape2)", not_typed_msg="Did you import `reshape2`?")
 test_student_typed("library(lubridate)", not_typed_msg="Did you import `lubridate`?")
+test_student_typed("library(dplyr)", not_typed_msg="Did you import `dplyr`?")
 
 #test_function("library", "Did you call the library() function?")
 test_error()
@@ -400,7 +403,22 @@ We created a new dataframe for you called `df_new`,  and we copied the timestamp
 `@hint`
 The `tail(...)` function can select the last N rows and we are dealing with hourly data. How many rows will represent that last 10-day period?
 
+`@pre_exercise_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
+
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+
+df_new = df$ts
+```
 
 
 
