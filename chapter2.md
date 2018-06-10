@@ -17,7 +17,7 @@ key: 33e93d2cb0
 
 ```
 
-Visualizing our data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions we pose in our data pipeline.
+Visualizing our data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions we pose in our data pipeline. We will use the plots to gain intuition into the data. In this chapter, we will be plotting temperature bands to determine cloudiness.
 
 `@instructions`
 Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. We will be constructing this plot in this chapter from scratch. When you are ready press submit to move to the first exercise.
@@ -175,7 +175,6 @@ You can write each import on a separate line and in any order you wish.
 ```{r}
 # This is how we import libraries in R
 # library(rvest)
-
 ```
 `@solution`
 ```{r}
@@ -259,7 +258,7 @@ ___ <- read.___(file = ___, sep = ___, skip = ___)
 ```{r}
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)   
+df <- read.delim(file = data, sep = ",", skip=1)
 ```
 `@sct`
 ```{r}
@@ -305,12 +304,9 @@ Original | Meaning | Mapping
 `meters` | visibility in meters [maximum is 75,000] | `vis`
 `mbar` | barometric pressure | `bp`
 
-
 `@instructions`
 Assign the new column names  instead of the original ones. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
-
-`@hint`
 
 
 `@pre_exercise_code`
@@ -395,10 +391,6 @@ key: 400058a13c
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -427,10 +419,6 @@ key: 88f9897b09
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -459,10 +447,6 @@ key: fba56b2895
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -491,10 +475,6 @@ key: a87cae653d
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -523,10 +503,6 @@ key: 3af49d5904
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -555,10 +531,6 @@ key: e578c9252b
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -587,10 +559,6 @@ key: af34272c37
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -619,10 +587,6 @@ key: 1e7e2be896
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -651,10 +615,6 @@ key: 01f706ea05
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
