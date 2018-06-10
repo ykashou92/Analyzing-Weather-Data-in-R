@@ -324,7 +324,8 @@ data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e
 df <- read.delim(file = data, sep = ",", skip=1)  
 
 # Take a look at the first 3 rows to better understand the column names.
-print(head(df, 3))
+#print(head(df, 3))
+df
 ```
 `@sample_code`
 ```{r}
