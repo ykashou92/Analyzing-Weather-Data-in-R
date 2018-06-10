@@ -395,10 +395,14 @@ key: 400058a13c
 So we have the data. Now we ask: What parts of these data do we need? Now we are going to visualize temperature over a period of time. Hence we need to select the columns we need and the number of rows we need as well so that we have an aesthetic graph that is easy to read and fast to run.
 
 `@instructions`
+We can use functions from a specific library, especially if another function with the same name exists in another library (in this case, they both will work.)
+`dplyr::select()` instead of `select()`.
+
 Here's what you should do:
 
-- Select the `ts` and `temp` columns from the dataframe and assign it to variable `df` (hence replacing the old one)
 - Subset the last 10 days.
+- Select the `ts` and `temp` columns from the dataframe and assign it to variable `df` (hence replacing the old one)
+- Verify that it worked with by calling the `str()` function on our dataframe.
 
 `@hint`
 The `tail(...)` function can select the last N rows and we are dealing with hourly data. How many rows will represent that last 10-day period?
@@ -435,11 +439,14 @@ df <- read.delim(file = data, sep = ",", skip=1)
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df) <- cols
 
-# Use dplyr's select functions
-___ <- ___(df, c(___, ___))
-
 # Subset the last 10 days
 ___ <- tail(df, ___)
+
+# Use dplyr's select function
+___ <- ___::___(df, c(___, ___))
+
+# Verify with str()
+str(___)
 ```
 `@solution`
 ```{r}
@@ -457,13 +464,22 @@ df <- read.delim(file = data, sep = ",", skip=1)
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df) <- cols
 
-# Use dplyr's select functions
-df <- dplyr::select(df, c(ts, temp))
-
 # Subset the last 10 days
 df <- tail(df, 240)
-```
 
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
+
+# Verify with str()
+str(df)
+```
+`@sct`
+```{r}
+test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
+
+test_error()
+success_msg("`Nice! You have been following through. Let's continue...")
+```
 
 
 
