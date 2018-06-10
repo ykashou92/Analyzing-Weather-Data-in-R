@@ -305,8 +305,10 @@ Original | Meaning | Mapping
 `mbar` | barometric pressure | `bp`
 
 `@instructions`
-Assign the new column names  instead of the original ones. You can copy and paste them.
+Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
+
+`@hint`
 
 
 `@pre_exercise_code`
@@ -363,7 +365,7 @@ colnames(df)= cols
 ```
 `@sct`
 ```{r}
-test_object("cols", incorrect_msg = "Something is wrong with `data`. Make sure you copied the column names correctly.")
+#test_object("cols", incorrect_msg = "Something is wrong with `data`. Make sure you copied the column names correctly.")
 test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
