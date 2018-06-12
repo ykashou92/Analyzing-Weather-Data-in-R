@@ -454,8 +454,8 @@ We will format our `ts` column in two steps:
 2. Format the column to represent only year-month-day values without hours, minutes or seconds.
 
 `@instructions`
-Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
-Use the `format(...)` function to convert the column from a _Year-Month-Day Hour:Minute:Second_ format to a _Year-Month-Day_.
+- Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
+- Use the `format(...)` function to convert the column from a _Year-Month-Day Hour:Minute:Second_ format to a _Year-Month-Day_.
 
 `@hint`
 
