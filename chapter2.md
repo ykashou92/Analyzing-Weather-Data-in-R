@@ -467,6 +467,12 @@ df <- read.delim(file = data, sep = ",", skip=1)
 # Assign those cool columns names
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df) <- cols
+
+# Subset the last 10 days
+df <- tail(df, 240)
+
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
 ```
 
 
