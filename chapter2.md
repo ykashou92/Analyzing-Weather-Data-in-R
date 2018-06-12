@@ -455,7 +455,7 @@ We will format our `ts` column in two steps:
 
 `@instructions`
 - Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
-- Use the `format(...)` function to convert the column from a _Year-Month-Day Hour:Minute:Second_ format to a _Year-Month-Day_.
+- Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` format to a `Year-Month-Day`.
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
