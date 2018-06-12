@@ -446,10 +446,16 @@ key: 88f9897b09
 
 ```
 
+Time data can take on various forms, we are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1, 1970**_.   
+  
+We will format our `ts` column in two steps:
 
+1. Convert it from a **factor** (category) object to a **date** object, specifically POSIXct.
+2. Format the column to represent only year-month-day values without hours, minutes or seconds.
 
 `@instructions`
-
+Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
+Use the `format(...)` function to convert the column from a _Year-Month-Day Hour:Minute:Second_ format to a _Year-Month-Day_.
 
 `@hint`
 
@@ -479,16 +485,17 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 `@sample_code`
 ```{r}
-df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+# We can select a specific column from the dataframe by using $ sign. 
+# df$ts selects the ts column.
+___ <- ___(df$ts, ___)
 
-df$ts <- format(df$ts, "%Y-%m-%d")
+df$ts <- format(___, ___)
 
 print(df$ts)
 ```
 `@solution`
 ```{r}
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
-
 df$ts <- format(df$ts, "%Y-%m-%d")
 ```
 
