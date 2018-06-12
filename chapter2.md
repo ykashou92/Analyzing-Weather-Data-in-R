@@ -481,14 +481,19 @@ df <- tail(df, 240)
 # Use dplyr's select function
 df <- dplyr::select(df, c(ts, temp))
 ```
-
-`@solution`
+`@sample_code`
 ```{r}
 df$ts <- factor(df$ts)
 
 t0 <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 
 df$ts <- format(t0, "%Y-%m-%d")
+```
+`@solution`
+```{r}
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+
+df$ts <- format(df$ts, "%Y-%m-%d")
 ```
 
 
