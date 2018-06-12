@@ -485,13 +485,21 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 `@sample_code`
 ```{r}
+
+
 # We can select a specific column from the dataframe by using $ sign. 
 # df$ts selects the ts column.
-___ <- ___(df$ts, ___)
-
+# Verify
+str(df$ts)
+# Use strptime here
+___ <- ___(df$ts, "%Y-%m-%d %H:%M:%S")
+# Verify
+str(df$ts)
+# Use the format function correctly
 df$ts <- format(___, ___)
 
-print(df$ts)
+# Verify
+str(df$ts)
 ```
 `@solution`
 ```{r}
