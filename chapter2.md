@@ -40,10 +40,13 @@ colnames(df) = cols
 
 # Subset and prepare the data
 df <- tail(df, 240)
-df$day <- factor(df$ts)
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
+
+df$ts <- factor(df$ts)
 t0 <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
-df$day <- format(t0, "%Y-%m-%d")
-df_agg <- aggregate(df$temp, by = list(df$day), function(x) {
+df$ts <- format(t0, "%Y-%m-%d")
+df_agg <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x)) })
 
 xdf <- NULL
@@ -302,8 +305,6 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -476,10 +477,7 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 
 
-`@sample_code`
-```{r}
 
-```
 
 
 
@@ -502,10 +500,6 @@ key: fba56b2895
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -562,10 +556,6 @@ key: 3af49d5904
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
@@ -675,3 +665,16 @@ key: 01f706ea05
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
