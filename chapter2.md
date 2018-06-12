@@ -249,7 +249,7 @@ library(dplyr)
 `@sample_code`
 ```{r}
 # Fill in the blanks!
-___ <- ___(___)
+___ <- ___("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 ___ <- read.___(file = ___, sep = ___, skip = ___)
 ```
 `@solution`
