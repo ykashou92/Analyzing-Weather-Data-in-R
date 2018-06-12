@@ -482,6 +482,8 @@ df <- dplyr::select(df, c(ts, temp))
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 
 df$ts <- format(df$ts, "%Y-%m-%d")
+
+print(df$ts)
 ```
 `@solution`
 ```{r}
