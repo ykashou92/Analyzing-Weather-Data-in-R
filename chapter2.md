@@ -19,6 +19,10 @@ key: 33e93d2cb0
 
 Visualizing our data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions we pose in our data pipeline. We will use the plots to gain intuition into the data. In this chapter, we will be plotting temperature bands to determine cloudiness.
 
+The cloudier the day, the narrower the temperature range. This is because clouds prevent heat from entering the atmosphere and also cause heat to be trapped on Earth, thus decreasing the amount of energy Earth receives from the Sun and the amount of energy  that leaves Earth. 
+
+And vice versa...
+
 `@instructions`
 Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. We will be constructing this plot in this chapter from scratch. When you are ready press submit to move to the first exercise.
 
