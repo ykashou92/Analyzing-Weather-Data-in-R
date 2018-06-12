@@ -512,7 +512,7 @@ df$ts <- format(df$ts, "%Y-%m-%d")
 ```
 `@sct`
 ```{r}
-test_object("df$ts", incorrect_msg = "Something is wrong with the timestamp column `ts`. Make sure you've used the correct values to the arguments during conversion.")
+test_object("df", incorrect_msg = "Something is wrong with the timestamp column `ts`. Make sure you've used the correct values to the arguments during conversion.")
 
 test_error()
 success_msg("`Good work! Let's proceed...")
