@@ -68,8 +68,6 @@ p <- ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   theme(axis.text.x=element_text(angle=45)) +
   theme(axis.title.x=element_blank())
 p
-
-x <- 0
 ```
 `@sample_code`
 ```{r}
@@ -305,8 +303,6 @@ Original | Mapping | Meaning | Unit
 `@instructions`
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
-
-`@hint`
 
 
 `@pre_exercise_code`
