@@ -479,11 +479,9 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 `@sample_code`
 ```{r}
-df$ts <- factor(df$ts)
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 
-t0 <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
-
-df$ts <- format(t0, "%Y-%m-%d")
+df$ts <- format(df$ts, "%Y-%m-%d")
 ```
 `@solution`
 ```{r}
