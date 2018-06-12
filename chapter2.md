@@ -47,7 +47,6 @@ df <- tail(df, 240)
 # Use dplyr's select function
 df <- dplyr::select(df, c(ts, temp))
 
-df$ts <- factor(df$ts)
 # Reformat the 'ts' column
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
@@ -96,9 +95,6 @@ colnames(df) = cols
 
 # Subset the last 10 days of data (24 hours * 10)
 df <- tail(df, 240)
-
-# Convert the 'ts' (timestamp) column into a factor we can work with
-df$day <- factor(df$ts)
 
 # Reformat the 'ts' column
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
