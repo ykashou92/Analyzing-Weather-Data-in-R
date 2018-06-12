@@ -24,7 +24,7 @@ The cloudier the day, the narrower the temperature range. This is because clouds
 And vice versa...
 
 `@instructions`
-Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. We will be constructing this plot in this chapter from scratch. When you are ready press submit to move to the first exercise.
+Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. We will be constructing this plot step-by-step from scratch. When you are ready, press submit to move to the first exercise.
 
 `@hint`
 Did you read through the code?
