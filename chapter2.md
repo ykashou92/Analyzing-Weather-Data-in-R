@@ -150,13 +150,7 @@ key: c7a40a5a73
 
 ```
 
-To build our plot, we first need to import a few libraries.
-
-One can import a library (for instance: the library **rvest**) like so:  
-`library(rvest)`
-
-`@instructions`
-The libraries we need are:
+To build our plot, we first need to import a few libraries:
 
 - **scales** To change and modify the scaling of the plot  
 - **ggplot2** To actually build the plot using a "grammar of graphics"  
@@ -164,7 +158,11 @@ The libraries we need are:
 - **lubridate** To manipulate data concerning date and time  
 - **dplyr** To easily select columns from the dataframe
 
-Import them like in the example.
+`@instructions`
+We can import a library (for instance: the library **rvest**) like so:  
+`library(rvest)`
+
+Import `scales`,  `ggplot2`, `reshape2`, `lubridate` and `dplyr` like the example above.
 
 `@hint`
 You can write each import on a separate line and in any order you wish.
