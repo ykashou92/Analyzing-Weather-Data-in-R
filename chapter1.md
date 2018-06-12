@@ -33,8 +33,6 @@ Assuming you have a file named `sample.tsv` that is *tab-separated*, you can imp
 
 With comma-separated variables, can simply set `sep = ","`. The "\" is unnecessary in this case.
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -92,10 +90,6 @@ key: 98b8ed2d89
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 

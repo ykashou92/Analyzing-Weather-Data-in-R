@@ -302,6 +302,8 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -443,9 +445,29 @@ key: 88f9897b09
 
 
 
+`@instructions`
 
 
+`@hint`
 
+
+`@pre_exercise_code`
+```{r}
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+library(dplyr)
+
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
+
+# Assign those cool columns names
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) <- cols
+```
 
 
 
@@ -471,6 +493,10 @@ key: fba56b2895
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
@@ -527,6 +553,10 @@ key: 3af49d5904
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
