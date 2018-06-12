@@ -244,15 +244,10 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 ```
 `@sample_code`
 ```{r}
-# Import Libraries
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
-
 # Fill in the blanks!
 ___ <- ___(___)
 ___ <- read.___(file = ___, sep = ___, skip = ___)
@@ -316,29 +311,18 @@ Assign the new column names  instead of the original ones using the `colnames()`
 
 `@pre_exercise_code`
 ```{r}
-# Import Libraries
 library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
+df <- read.delim(file = data, sep = ",", skip=1)
 ```
 `@sample_code`
 ```{r}
-# Import Libraries
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
-
-# Read the data
-data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
 # Copy the following line into the console and press 'Enter'
 head(df, 2)
 
@@ -351,16 +335,6 @@ ___(df) = cols
 ```
 `@solution`
 ```{r}
-# Import Libraries
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
-
-# Read the data
-data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df)= cols
 ```
@@ -426,21 +400,6 @@ colnames(df) <- cols
 ```
 `@sample_code`
 ```{r}
-# Import Libraries
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
-library(dplyr)
-
-# Read the data
-data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
-# Assign those cool columns names
-cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
-colnames(df) <- cols
-
 # Subset the last 10 days
 ___ <- tail(df, ___)
 
@@ -452,21 +411,6 @@ str(___)
 ```
 `@solution`
 ```{r}
-# Import Libraries
-library(scales)
-library(ggplot2)
-library(reshape2)
-library(lubridate)
-library(dplyr)
-
-# Read the data
-data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
-# Assign those cool columns names
-cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
-colnames(df) <- cols
-
 # Subset the last 10 days
 df <- tail(df, 240)
 
@@ -505,10 +449,6 @@ key: 88f9897b09
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
