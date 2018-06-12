@@ -53,7 +53,7 @@ xdf$min <- df_agg$x[, 2]
 xdf$avg <- (xdf$max + xdf$min) / 2
 xdf <- data.frame(xdf)
 
-# Visualize the cloud bands 
+# Visualize the cloud bands
 p <- ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) +
   geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
@@ -362,7 +362,7 @@ key: 400058a13c
 
 ```
 
-So we have the data. Now we ask: What parts of these data do we need? Now we are going to visualize temperature over a period of time. Hence we need to select the columns we need and the number of rows we need as well so that we have an aesthetic graph that is easy to read and fast to run.
+So we have the data. Now we ask: What parts of these data do we need?  We are going to visualize temperature over a period of time. Hence we only select the columns we need and the number of rows we wish to represent such that we create an aesthetically pleasing graph that is easy to read and fast to run.
 
 `@instructions`
 We can use functions from a specific library, especially if another function with the same name exists in another library (in this case, they both will work.)
@@ -476,7 +476,10 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 
 
+`@sample_code`
+```{r}
 
+```
 
 
 
@@ -672,16 +675,3 @@ key: 01f706ea05
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
