@@ -457,6 +457,8 @@ We will format our `ts` column in two steps:
 - Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
 - Use the `format(...)` function to convert the column from a _Year-Month-Day Hour:Minute:Second_ format to a _Year-Month-Day_.
 
+We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
+
 `@hint`
 
 
@@ -485,18 +487,20 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 `@sample_code`
 ```{r}
-
-
 # We can select a specific column from the dataframe by using $ sign. 
-# df$ts selects the ts column.
+# df$ts selects the ts column, in each step will with replace the column with its result
+
 # Verify
 str(df$ts)
-# Use strptime here
-___ <- ___(df$ts, "%Y-%m-%d %H:%M:%S")
+
+# Step 1: Use strptime here
+df$ts <- ___(___, "%Y-%m-%d %H:%M:%S")
+
 # Verify
 str(df$ts)
-# Use the format function correctly
-df$ts <- format(___, ___)
+
+# Step 2: Use the format function correctly
+df$ts <- format(df$ts, ___)
 
 # Verify
 str(df$ts)
