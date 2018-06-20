@@ -459,6 +459,8 @@ We will format our `ts` column in two steps:
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -587,7 +589,13 @@ xdf <- ___(df$___, by = list(df$___), function(x) {
 xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x), avg = mean(x))})
 ```
+`@sct`
+```{r}
+test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
 
+test_error()
+success_msg("`Good work! Let's proceed...")
+```
 
 
 
