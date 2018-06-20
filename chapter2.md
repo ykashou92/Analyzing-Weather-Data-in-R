@@ -459,8 +459,6 @@ We will format our `ts` column in two steps:
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -524,7 +522,7 @@ success_msg("`Good work! Let's proceed...")
 
 
 ---
-## Finding the Minimum and Maximum Temperatures Per Day
+## Finding the Minimum, Maximum and Average Temperature Per Day
 
 ```yaml
 type: NormalExercise
@@ -537,10 +535,15 @@ key: fba56b2895
 
 ```
 
+So that's all interesting, but wouldn't it be cooler to find the minimum, maximum and average temperature in a single line of code?
 
+ Type `?aggregate` in the console and read through the documentation, observe the very first example:
+`aggregate(state.x77, list(Region = state.region), mean)`
+
+Basically, in the example, they calculate the **mean** of the `state.x77` data frame, grouped by (state.region)
 
 `@instructions`
-
+Use the aggregate function in the format `aggregate(x, by, func, ...) ` to calculate the `min()`, `max()`, and `mean()` values of the `temp` column of the data frame `df` grouped by the `ts` column of the same data frame and store it in a variable called `xdf`.
 
 `@hint`
 
@@ -571,8 +574,16 @@ df <- dplyr::select(df, c(ts, temp))
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 ```
-
-
+`@sample_code`
+```{r}
+xdf <- aggregate(df$___, by = list(df$___), function(x) {
+  c(max = ___(x), min = ___(x), avg = ___(x))})
+```
+`@solution`
+```{r}
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
+  c(max = max(x), min = min(x), avg = mean(x))})
+```
 
 
 
@@ -596,6 +607,10 @@ key: a87cae653d
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
