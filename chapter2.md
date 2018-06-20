@@ -594,7 +594,7 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
 test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
 
 test_error()
-success_msg("`Good work! Let's proceed...")
+success_msg("`Awesome! Now that your data is ready, it's plotting time!")
 ```
 
 
