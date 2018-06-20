@@ -540,7 +540,8 @@ So that's all interesting, but wouldn't it be cooler to find the minimum, maximu
  Type `?aggregate` in the console and read through the documentation, observe the very first example:
 `aggregate(state.x77, list(Region = state.region), mean)`
 
-Basically, in the example, they calculate the **mean** of the `state.x77` data frame, grouped by (state.region)
+Basically, in the example, the aggregate function takes **an R object**, a **list of grouping elements** and a **function to compute**. 
+In this particular case they calculate the **`mean()`** of the **`state.x77`** data frame, grouped by (**`state.region`**)
 
 `@instructions`
 Use the aggregate function in the format `aggregate(x, by, func, ...) ` to calculate the `min()`, `max()`, and `mean()` values of the `temp` column of the data frame `df` grouped by the `ts` column of the same data frame and store it in a variable called `xdf`.
@@ -576,7 +577,9 @@ df$ts <- format(df$ts, "%Y-%m-%d")
 ```
 `@sample_code`
 ```{r}
-xdf <- aggregate(df$___, by = list(df$___), function(x) {
+# Don't fret! It's simpler than you might think.
+# The three calculations are just concatenated together.
+xdf <- ___(df$___, by = list(df$___), function(x) {
   c(max = ___(x), min = ___(x), avg = ___(x))})
 ```
 `@solution`
