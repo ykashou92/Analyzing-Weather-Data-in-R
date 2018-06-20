@@ -548,8 +548,10 @@ In this particular case they calculate the **`mean()`** of the **`state.x77`** d
 `@instructions`
 Use the aggregate function in the format `aggregate(x, by, func, ...) ` to calculate the `min()`, `max()`, and `mean()` values of the `temp` column of the data frame `df` grouped by the `ts` column of the same data frame and store it in a variable called `xdf`.
 
-`@hint`
+Afterwards, take a look at the data frame when it is printed out in the console.
 
+`@hint`
+You can select the columns using the `$` symbol.
 
 `@pre_exercise_code`
 ```{r}
@@ -583,6 +585,8 @@ df$ts <- format(df$ts, "%Y-%m-%d")
 # The three calculations are just concatenated together.
 xdf <- ___(df$___, by = list(df$___), function(x) {
   c(max = ___(x), min = ___(x), avg = ___(x))})
+
+print(xdf)
 ```
 `@solution`
 ```{r}
