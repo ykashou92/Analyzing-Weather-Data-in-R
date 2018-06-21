@@ -51,15 +51,10 @@ df <- dplyr::select(df, c(ts, temp))
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 
-df_agg <- aggregate(df$temp, by = list(df$ts), function(x) {
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x)) })
 
-xdf <- NULL
-xdf$ts <- df_agg$Group.1
-xdf$max <- df_agg$x[, 1]
-xdf$min <- df_agg$x[, 2]
-xdf$avg <- (xdf$max + xdf$min) / 2
-xdf <- data.frame(xdf)
+xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 
 # Visualize the cloud bands
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -620,10 +615,10 @@ key: a87cae653d
 
 ```
 
-
+This is our final step before visualizing our data. The aggregated dataframe `xdf` actually needs to be reshaped. See it appears like a normal dataframe, but it the mean, minimum and maximum columns are actually nested within the timestamp, instead of alongside it. The dataframe we have now is a multi-index dataframe, or multiple-layered.
 
 `@instructions`
-
+Look up `?cbind`...
 
 `@hint`
 
