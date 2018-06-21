@@ -598,7 +598,7 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
 test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
 
 test_error()
-success_msg("`Awesome! Now that your data is ready, it's plotting time!")
+success_msg("`Awesome! It's nearly plotting time!")
 ```
 
 
@@ -607,7 +607,7 @@ success_msg("`Awesome! Now that your data is ready, it's plotting time!")
 
 
 ---
-## Finding the Average Temperature Per Day
+## Reformatting the aggregated data with `cbind`
 
 ```yaml
 type: NormalExercise
