@@ -868,9 +868,22 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 ```
 `@sample_code`
 ```{r}
-# The
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+  geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+  ___(aes(y = ___, color = "firebrick", size = ___, group = ___) + 
+  ___(___(y = max, color = "___", size = 1, group = ___))
+      
+p
 ```
-
+`@solution`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+  geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+  geom_line(aes(y = max, color = "firebrick", size = 1, group = 1) + 
+  geom_line(aes(y = max, color = "steelblue", size = 1, group = 1)
+```
 
 
 
