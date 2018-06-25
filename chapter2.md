@@ -642,6 +642,7 @@ key: 3af49d5904
 Now that we have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, we first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
 
 Note that you do not have to use the column selector `$` in the `aes` argument of `ggplot()`. Instead you can simply type `ts` to reference the `ts` column of the data frame `df` if `df` is given as the data argument.
+
 `ggplot(df, aes(x = xcolumn, y = ycolumn)` as opposed to `ggplot(df, aes(x = df$xcolumn, y = df$ycolumn)`
 
 `@instructions`
@@ -681,7 +682,10 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 ```
 `@sample_code`
 ```{r}
-___(___, (x = ts, y = ___, ymin = ___, ymax = ))
+# Use the ggplot()
+# Select the data
+# Define the aes() argument
+___(___, ___(x = ts, y = ___, ymin = ___, ymax = max))
 ```
 
 
