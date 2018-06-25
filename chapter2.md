@@ -298,8 +298,6 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -451,8 +449,6 @@ We will format our `ts` column in two steps:
 - Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` format to a `Year-Month-Day`.
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
-
-`@hint`
 
 
 `@pre_exercise_code`
@@ -618,8 +614,6 @@ This is our final step before visualizing our data. The aggregated dataframe `xd
 `@instructions`
 Look up `?cbind`...
 
-`@hint`
-
 
 
 `@sample_code`
@@ -709,7 +703,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
 ```
 `@sct`
 ```{r}
-test_object("p", incorrect_msg = "Hmm, might want to recheck your code...")
+test_object(p, incorrect_msg = "Hmm, might want to recheck your code...")
 
 test_error()
 success_msg("Our plot is in the making! Keep going!")
@@ -736,10 +730,6 @@ key: e578c9252b
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 
