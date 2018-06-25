@@ -672,29 +672,32 @@ Press submit when you are ready.
 
 `@pre_exercise_code`
 ```{r}
-# Number of 'actual' columns in data frame (what we want is 4 - ts, max, min, avg)
-ncol(xdf)
+# Import Libraries
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+library(dplyr)
 
-# Since ncol is 2, we cannot choose any columns other than 1 and 2.
-# Let's subset column 1 and view it
-xdf[1]    
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)  
 
-# Let's subset column 2 and view it
-xdf[2]
+# Assign those cool columns names
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) <- cols
 
-# But column 2 actually consists of 3 columns. 
-# Subsetting will take one extra bracket.
-xdf[[2]]
+# Subset the last 10 days
+df <- tail(df, 240)
 
-# So we will `cbind` or column bind the first column, with the other three.
-xdf <- cbind(xdf[1], xdf[[2]])
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
 
-# Let's call ncol again
-ncol(xdf)
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+df$ts <- format(df$ts, "%Y-%m-%d")
 
-# Finally let's reassign the column names
-cols <- c("ts", "max", "min", "avg")
-colnames(xdf) <- cols
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
+  c(max = max(x), min = min(x), avg = mean(x)) })
 ```
 `@sample_code`
 ```{r}
