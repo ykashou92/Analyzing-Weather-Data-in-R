@@ -294,6 +294,8 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -616,7 +618,11 @@ Look up `?cbind`...
 
 
 
-
+`@sample_code`
+```{r}
+cols <- c("ts", "max", "min","avg")
+colnames(xdf) = cols
+```
 
 
 
