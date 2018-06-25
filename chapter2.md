@@ -656,8 +656,8 @@ Note that you do not have to use the column selector `$` in the `aes` argument o
 `ggplot(df, aes(x = xcolumn, y = ycolumn)` as opposed to `ggplot(df, aes(x = df$xcolumn, y = df$ycolumn)`
 
 `@instructions`
-Use `ggplot()` to plot the data, where `x`, `y`, `ymin`, and `ymax` will correspond to the `ts`, `avg`, `min` and `max` columns of the data frame `xdf`, here's an example:  
-`ggplot(df, aes(x = time, y = temperature)`
+Use `ggplot()` to plot the data, where `x`, `y`, `ymin`, and `ymax` will correspond to the `ts`, `avg`, `min` and `max` columns of the data frame `xdf` and save it to a variable `p`, here's an example:  
+`p <- ggplot(df, aes(x = time, y = temperature)`
 
 `@hint`
 The best hint is the documentation. Try  the `?ggplot` command in the console!
@@ -697,9 +697,16 @@ colnames(xdf) = cols
 # Use the ggplot()
 # Select the data
 # Define the aes() argument
-___(___, ___(x = ts, y = ___, ymin = ___, ymax = max))
-```
+# Assign it to variable `p`
+___ <- ___(___, ___(x = ts, y = ___, ymin = ___, ymax = max))
 
+# Writing p by itself will view the plot when the code is run
+p
+```
+`@solution`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
+```
 
 
 
@@ -723,6 +730,10 @@ key: e578c9252b
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
