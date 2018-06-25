@@ -446,6 +446,8 @@ We will format our `ts` column in two steps:
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -610,6 +612,8 @@ This is our final step before visualizing our data. The aggregated dataframe `xd
 `@instructions`
 Look up `?cbind`...
 
+`@hint`
+
 
 
 
@@ -622,7 +626,7 @@ Look up `?cbind`...
 
 
 ---
-## Plotting: The axes
+## Plotting: The Aesthetics
 
 ```yaml
 type: NormalExercise
@@ -635,8 +639,13 @@ key: 3af49d5904
 
 ```
 
+Now that we have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, we first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
 
+`@instructions`
+Use ggplot() to plot the data, here's an example:  
+`ggplot(df, aes(x = time, y = temperature)`
 
+`@hint`
 
 
 
