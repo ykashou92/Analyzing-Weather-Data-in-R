@@ -974,7 +974,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
   	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
 	# The point range
-    geom_pointrage(color = "black", size = 0.75)
+    geom_pointrange(color = "black", size = 0.75)
 p
 ```
 `@sct`
@@ -1054,7 +1054,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
   	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
 	# The point range
-    geom_pointrage(color = "black", size = 0.75) +
+    geom_pointrange(color = "black", size = 0.75) +
 	# The Title
 	___("___") +
 	# The x and y labels
@@ -1079,7 +1079,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
   	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
 	# The point range
-    geom_pointrage(color = "black", size = 0.75) +
+    geom_pointrange(color = "black", size = 0.75) +
 	# The Title
 	ggtitle("The cloudier the day, the narrower the band") +
 	# The x and y labels
