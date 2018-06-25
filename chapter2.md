@@ -741,7 +741,8 @@ Use `geom_point()` to:
 2. Plot the points of the minimum occurring temperature, with a color of  `steelblue` and a size of `3.5`.
 
 `@hint`
-
+You've gone this far, maybe the documentation should help for now on :-) 
+`?geom_point`
 
 `@pre_exercise_code`
 ```{r}
@@ -789,7 +790,15 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) +
 ```
+`@sct`
+```{r}
+test_student_typed("p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+	___(aes(y = ___), color = '___', size = ___) +
+	___(aes(y = min), color = '___', size = ___)", not_typed_msg = "Something is wrong with your expression. Take another look at the instructions.")
 
+test_error()
+success_msg("Our plot is in the making! Keep going!")
+```
 
 
 
