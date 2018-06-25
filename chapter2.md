@@ -255,7 +255,7 @@ key: 768d0c5d2f
 ```
 
 Now it's time to import our data like we learned in the first chapter.
-The libraries have already been imported in the background, but we kept the code visible to you so you can keep track of the whole process.
+The libraries have already been imported in the background, but we kept the code invisible to you so you can keep focus on the current task.
 
 Our data is hosted on [https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat](https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat).
 
