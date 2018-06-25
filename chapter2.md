@@ -618,6 +618,8 @@ This is our final step before visualizing our data. The aggregated dataframe `xd
 `@instructions`
 Look up `?cbind`...
 
+`@hint`
+
 
 
 `@sample_code`
@@ -884,7 +886,13 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_line(aes(y = max, color = "firebrick", size = 1, group = 1) + 
   geom_line(aes(y = max, color = "steelblue", size = 1, group = 1)
 ```
+`@sct`
+```{r}
+test_object("p", incorrect_msg = "Hmm, might want to recheck your code...")
 
+test_error()
+success_msg("Cool! You're killing it! A couple more things and you are done!")
+```
 
 
 
