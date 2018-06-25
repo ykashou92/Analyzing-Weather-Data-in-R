@@ -35,6 +35,7 @@ library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
@@ -74,41 +75,34 @@ p
 ```
 `@sample_code`
 ```{r}
-# Import Libraries
 library(scales)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
-df <- read.delim(file = data, sep = ",", skip=1)  
-
-# Rename the columns
+df <- read.delim(file = data, sep = ",", skip=1)   
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df) = cols
 
-# Subset the last 10 days of data (24 hours * 10)
+# Subset and prepare the data
 df <- tail(df, 240)
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
 
 # Reformat the 'ts' column
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 
-# Aggregate the produced column to find the minimum and maximum temperatures of each day
-df_agg <- aggregate(df$temp, by = list(df$ts), function(x) {
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x)) })
 
-# Find the average temperature of each day
-xdf <- NULL
-xdf$ts <- df_agg$Group.1
-xdf$max <- df_agg$x[, 1]
-xdf$min <- df_agg$x[, 2]
-xdf$avg <- (xdf$max + xdf$min) / 2
-xdf <- data.frame(xdf)
+xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 
-# Visualize the temperature bands
-p <- ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
+# Visualize the cloud bands
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) +
   geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
   geom_pointrange(color = "black", size= 0.75) +
@@ -121,8 +115,6 @@ p <- ggplot(xdf, aes(x = day, y = avg, ymin = min, ymax = max)) +
   theme_minimal() +
   theme(axis.text.x=element_text(angle=45)) +
   theme(axis.title.x=element_blank())
-
-# Run the plot
 p
 ```
 
@@ -454,8 +446,6 @@ We will format our `ts` column in two steps:
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -619,8 +609,6 @@ This is our final step before visualizing our data. The aggregated dataframe `xd
 
 `@instructions`
 Look up `?cbind`...
-
-`@hint`
 
 
 
