@@ -683,7 +683,7 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x), avg = mean(x)) })
 
 xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
-cols <- c("ts", "max", "min","avg")
+cols <- c("ts", "max", "min", "avg")
 colnames(xdf) = cols
 ```
 `@sample_code`
@@ -692,7 +692,7 @@ colnames(xdf) = cols
 # Select the data
 # Define the aes() argument
 # Assign it to variable `p`
-___ <- ___(___, ___(x = ts, y = ___, ymin = ___, ymax = max))
+p <- ___(___, ___(x = ts, y = ___, ymin = min, ymax = ___))
 
 # Writing p by itself will view the plot when the code is run
 p
