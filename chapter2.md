@@ -736,7 +736,8 @@ When we save a plot to a variable, it gives us power to add `layers` on the plot
 The `geom_point()` function is how we plot **points**, the `geom_line()` function is how we plot **lines**. They both can take a large number of arguments that change how they appear on the graph.
 
 `@instructions`
-Use `geom_point()` to:
+Use `geom_point()` to:  
+
 - Plot the points of the maximum occurring temperature, with a color of  `firebrick` and a size of `3.5`.
 - Plot the points of the minimum occurring temperature, with a color of  `steelblue` and a size of `3.5`.
 
@@ -788,13 +789,11 @@ p
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
-  geom_point(aes(y = min), color = "steelblue", size = 3.5) +
+  geom_point(aes(y = min), color = "steelblue", size = 3.5)
 ```
 `@sct`
 ```{r}
-test_student_typed("p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
-	___(aes(y = ___), color = '___', size = ___) +
-	___(aes(y = min), color = '___', size = ___)", not_typed_msg = "Something is wrong with your expression. Take another look at the instructions.")
+test_student_typed('p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) + geom_point(aes(y = max), color = "firebrick", size = 3.5) + geom_point(aes(y = min), color = "steelblue", size = 3.5)', not_typed_msg = "Something is wrong with your expression. Take another look at the instructions.")
 
 test_error()
 success_msg("Our plot is in the making! Keep going!")
