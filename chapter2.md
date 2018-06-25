@@ -921,7 +921,36 @@ key: 1e7e2be896
 `@hint`
 
 
+`@pre_exercise_code`
+```{r}
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+library(dplyr)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)   
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) = cols
+
+# Subset and prepare the data
+df <- tail(df, 240)
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
+
+# Reformat the 'ts' column
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+df$ts <- format(df$ts, "%Y-%m-%d")
+
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
+  c(max = max(x), min = min(x), avg = mean(x)) })
+
+xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
+cols <- c("ts", "max", "min","avg")
+colnames(xdf) = cols
+```
 
 
 
