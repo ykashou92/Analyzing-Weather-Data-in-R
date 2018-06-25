@@ -99,7 +99,7 @@ df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 
 xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
-  c(max = max(x), min = min(x)) })
+  c(max = max(x), min = min(x), avg = mean(x)) })
 
 xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
