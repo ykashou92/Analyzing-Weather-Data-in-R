@@ -701,8 +701,22 @@ colnames(df) <- cols
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
+`@solution`
+```{r}
+# So we will `cbind` or column bind the first column, with the other three.
+xdf <- cbind(xdf[1], xdf[[2]])
 
+# Finally let's reassign the column names
+cols <- c("ts", "max", "min", "avg")
+colnames(df) <- cols
+```
+`@sct`
+```{r}
+test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
 
+test_error()
+success_msg("`Awesome! It's nearly plotting time!")
+```
 
 
 
