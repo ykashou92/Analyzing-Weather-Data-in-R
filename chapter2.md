@@ -642,7 +642,7 @@ key: 3af49d5904
 Now that we have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, we first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
 
 Note that you do not have to use the column selector `$` in the `aes` argument of `ggplot()`. Instead you can simply type `ts` to reference the `ts` column of the data frame `df` if `df` is given as the data argument.
-`ggplot(dataframe, aes(x = xcolumn, y = ycolumn)`
+`ggplot(df, aes(x = xcolumn, y = ycolumn)` as opposed to `ggplot(df, aes(x = df$xcolumn, y = df$ycolumn)`
 
 `@instructions`
 Use `ggplot()` to plot the data, where `x`, `y`, `ymin`, and `ymax` will correspond to the `ts`, `avg`, `min` and `max` columns of the data frame `xdf`, here's an example:  
