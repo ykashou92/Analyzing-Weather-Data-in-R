@@ -102,6 +102,8 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x)) })
 
 xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
+cols <- c("ts", "max", "min","avg")
+colnames(xdf) = cols
 
 # Visualize the cloud bands
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
