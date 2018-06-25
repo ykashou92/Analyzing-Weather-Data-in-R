@@ -826,7 +826,12 @@ key: af34272c37
 `@hint`
 
 
-
+`@pre_exercise_code`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+  geom_point(aes(y = min), color = "steelblue", size = 3.5)
+```
 
 
 
