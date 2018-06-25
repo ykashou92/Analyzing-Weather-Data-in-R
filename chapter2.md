@@ -708,9 +708,9 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
 `@sct`
 ```{r}
 #test_object("p", incorrect_msg = "Hmm, might want to recheck your code...")
-test_output_contains("p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))", incorrect_msg = "Hmm, might want to recheck your code...")
+#test_output_contains("p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))", incorrect_msg = "Hmm, might want to recheck your code...")
 
-test_error()
+#test_error()
 success_msg("Our plot is in the making! Keep going!")
 ```
 
