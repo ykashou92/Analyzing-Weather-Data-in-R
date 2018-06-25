@@ -411,8 +411,8 @@ We can use functions from a specific library, especially if another function wit
 
 Here's what you should do:
 
-- Subset the last 10 days.
-- Select the `ts` and `temp` columns from the dataframe and assign it to variable `df` (hence replacing the old one)
+- Subset the last 10 days (not rows) and assign it back to the same variable `df` (hence replacing the old one).
+- Select the `ts` and `temp` columns from the dataframe and assign it to variable `df` (hence replacing the old one).
 - Verify that it worked with by calling the `str()` function on our dataframe.
 
 `@hint`
