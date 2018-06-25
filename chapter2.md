@@ -694,7 +694,7 @@ colnames(xdf) = cols
 ```
 `@sample_code`
 ```{r}
-# Use the ggplot()
+# Use the ggplot() function
 # Select the data
 # Define the aes() argument
 # Assign it to variable `p`
