@@ -733,9 +733,11 @@ key: e578c9252b
 ```
 
 When we save a plot to a variable, it gives us power to add `layers` on the plot. This is simply given by the addition symbol `+`. Check the sample code.
+The `geom_point()` function is how we plot **points**, the `geom_line()` function is how we plot **lines**. They both can take a large number of arguments that change how they appear on the graph.
 
 `@instructions`
-
+Use `geom_point()` to plot the points of the maximum and minimum occurring temperatures. You will need to define two layers for this - one for each, like so:
+`geom_point(aes(y = max))`
 
 `@hint`
 
@@ -770,11 +772,22 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 
-
-
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
 ```
+`@sample_code`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+	___(aes(y = ___), color = '___', size = ___) +
+	___(aes(y = ___), color = '___', size = ___)
 
-
+p
+```
+`@solution`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+  geom_point(aes(y = min), color = "steelblue", size = 3.5) +
+```
 
 
 
@@ -798,6 +811,10 @@ key: af34272c37
 
 
 
+`@instructions`
+
+
+`@hint`
 
 
 
