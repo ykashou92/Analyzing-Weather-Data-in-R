@@ -737,8 +737,8 @@ The `geom_point()` function is how we plot **points**, the `geom_line()` functio
 
 `@instructions`
 Use `geom_point()` to:
-1. Plot the points of the maximum occurring temperature, with a color of  `firebrick` and a size of `3.5`.
-2. Plot the points of the minimum occurring temperature, with a color of  `steelblue` and a size of `3.5`.
+- Plot the points of the maximum occurring temperature, with a color of  `firebrick` and a size of `3.5`.
+- Plot the points of the minimum occurring temperature, with a color of  `steelblue` and a size of `3.5`.
 
 `@hint`
 You've gone this far, maybe the documentation should help for now on :-) 
