@@ -820,11 +820,15 @@ key: af34272c37
 
 Time to plot the lines with `geom_line()`!
 
+We will do the same as in the previous lesson, except with one difference we will add an extra argument `group = 1` to each of them to connect the lines together.
+
 `@instructions`
 Use `geom_line()` to:
+- Plot the points of the maximum occurring temperature, with a color of  `firebrick`, a size of `1` and a group of `1`.
+- Plot the points of the minimum occurring temperature, with a color of  `steelblue`, a size of `1`and a group of `1`.
 
 `@hint`
-
+Use `?geom_line`!
 
 `@pre_exercise_code`
 ```{r}
