@@ -683,7 +683,7 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x), avg = mean(x)) })
 
 xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
-cols <- c("ts", "max", "min", "avg")
+cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
 `@sample_code`
