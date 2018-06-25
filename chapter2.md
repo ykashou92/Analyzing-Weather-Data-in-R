@@ -694,12 +694,33 @@ ncol(xdf)
 
 # Finally let's reassign the column names
 cols <- c("ts", "max", "min", "avg")
-colnames(df) <- cols
+colnames(xdf) <- cols
 ```
 `@sample_code`
 ```{r}
-cols <- c("ts", "max", "min","avg")
-colnames(xdf) = cols
+# Number of 'actual' columns in data frame (what we want is 4 - ts, max, min, avg)
+ncol(xdf)
+
+# Since ncol is 2, we cannot choose any columns other than 1 and 2.
+# Let's subset column 1 and view it
+xdf[1]    
+
+# Let's subset column 2 and view it
+xdf[2]
+
+# But column 2 actually consists of 3 columns. 
+# Subsetting will take one extra bracket.
+xdf[[2]]
+
+# So we will `cbind` or column bind the first column, with the other three.
+xdf <- cbind(xdf[1], xdf[[2]])
+
+# Let's call ncol again
+ncol(xdf)
+
+# Finally let's reassign the column names
+cols <- c("ts", "max", "min", "avg")
+colnames(xdf) <- cols
 ```
 `@solution`
 ```{r}
@@ -708,7 +729,7 @@ xdf <- cbind(xdf[1], xdf[[2]])
 
 # Finally let's reassign the column names
 cols <- c("ts", "max", "min", "avg")
-colnames(df) <- cols
+colnames(xdf) <- cols
 ```
 `@sct`
 ```{r}
