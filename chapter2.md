@@ -641,15 +641,48 @@ key: 3af49d5904
 
 Now that we have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, we first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
 
+Note that you do not have to use the column selector `$` in the `aes` argument of `ggplot()`. Instead you can simply type `ts` to reference the `ts` column of the data frame `df` if `df` is given as the data argument.
+`ggplot(dataframe, aes(x = xcolumn, y = ycolumn)`
+
 `@instructions`
-Use ggplot() to plot the data, here's an example:  
+Use `ggplot()` to plot the data, where `x`, `y`, `ymin`, and `ymax` will correspond to the `ts`, `avg`, `min` and `max` columns of the data frame `xdf`, here's an example:  
 `ggplot(df, aes(x = time, y = temperature)`
 
 `@hint`
+The best hint is the documentation. Try  the `?ggplot` command in the console!
 
+`@pre_exercise_code`
+```{r}
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+library(dplyr)
 
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)   
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) = cols
 
+# Subset and prepare the data
+df <- tail(df, 240)
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
 
+# Reformat the 'ts' column
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+df$ts <- format(df$ts, "%Y-%m-%d")
+
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
+  c(max = max(x), min = min(x)) })
+
+xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
+```
+`@sample_code`
+```{r}
+___(___, (x = ts, y = ___, ymin = ___, ymax = ))
+```
 
 
 
