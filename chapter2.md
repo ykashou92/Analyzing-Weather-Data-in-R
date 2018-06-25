@@ -875,8 +875,8 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
-  ___(aes(y = ___, color = "firebrick", size = ___, group = ___) + 
-  ___(___(y = max, color = "___", size = 1, group = ___))
+  ___(aes(y = ___), color = "firebrick", size = ___, group = ___) + 
+  ___(___(y = max), color = "___", size = 1, group = ___)
       
 p
 ```
