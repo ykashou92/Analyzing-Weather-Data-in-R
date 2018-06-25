@@ -795,8 +795,10 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 ```
 `@sct`
 ```{r}
-test_student_typed('p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) + geom_point(aes(y = max), color = "firebrick", size = 3.5) + geom_point(aes(y = min), color = "steelblue", size = 3.5)', not_typed_msg = "Something is wrong with your expression. Take another look at the instructions.")
-
+test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
+            aes_fail_msg = "Something's wrong in the `aes()` layer of your `ggplot()` call. Did you plot `year` on the x-axis and `percent_yes` on the y-axis?",
+            geom_fail_msg = "Did you add a `geom_line` layer with `geom_line()` to your call to `ggplot()`?",
+            facet_fail_msg = "Did you add a facet layer with `facet_wrap()`? Make sure to use the correct syntax: `~ country`.")
 test_error()
 success_msg("Our plot is in the making! Keep going!")
 ```
