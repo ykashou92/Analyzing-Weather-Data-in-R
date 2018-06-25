@@ -732,8 +732,12 @@ key: e578c9252b
 
 ```
 
+When we save a plot to a variable, it gives us power to add `layers` on the plot. This is simply given by the addition symbol `+`. Check the sample code.
+
+`@instructions`
 
 
+`@hint`
 
 
 
