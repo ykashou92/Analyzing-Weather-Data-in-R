@@ -884,7 +884,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
   geom_line(aes(y = max, color = "firebrick", size = 1, group = 1) + 
-  geom_line(aes(y = max, color = "steelblue", size = 1, group = 1)
+  geom_line(aes(y = min, color = "steelblue", size = 1, group = 1)
 ```
 `@sct`
 ```{r}
