@@ -663,12 +663,12 @@ This is our final step before visualizing our data. The aggregated data frame `x
 Try the commands in the coding section to better understand the data.
 
 `@instructions`
-Look up `?cbind`...
-
-Press submit when you are ready.
+Use `cbind()` to bind the first column of `xdf`, to the three sub-columns contained in the second column of `xdf`:
+- Run the first four `print()` commands and try to understand the structure of the data frame.
+- `cbind()` the correct columns and assign it to the same variable `xdf`.
 
 `@hint`
-
+Remember that we can subset using square bracket notation. `df[5]` selects the **5th** column of the data frame.
 
 `@pre_exercise_code`
 ```{r}
@@ -702,21 +702,21 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
 `@sample_code`
 ```{r}
 # Number of 'actual' columns in data frame (what we want is 4 - ts, max, min, avg)
-ncol(xdf)
+print(paste("Number of columns in xdf:",ncol(xdf)))
 
 # Since ncol is 2, we cannot choose any columns other than 1 and 2.
 # Let's subset column 1 and view it
-xdf[1]    
+print(paste("The 1st column of xdf:", xdf[1]))  
 
 # Let's subset column 2 and view it
-xdf[2]
+print(paste("The 2nd column of xdf:", xdf[2]))  
 
 # But column 2 actually consists of 3 columns. 
 # Subsetting will take one extra bracket.
-xdf[[2]]
+print(paste("Looking deeper into the 2nd column of xdf:", xdf[[2]])
 
 # So we will `cbind` or column bind the first column, with the other three.
-xdf <- cbind(xdf[1], xdf[[2]])
+xdf <- cbind(xdf[___], xdf[[___]])
 
 # Let's call ncol again
 ncol(xdf)
