@@ -879,10 +879,10 @@ p
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
-  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
-  geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
-  geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
-  geom_line(aes(y = min), color = "steelblue", size = 1, group = 1)
+ 	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+ 	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+ 	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+ 	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1)
 ```
 `@sct`
 ```{r}
@@ -951,9 +951,41 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
-
-
-
+`@sample_code`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+	# The point range
+    ___(___ = "___", ___ = 0.75)
+p
+```
+`@solution`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+	# The point range
+    geom_pointrage(color = "black", size = 0.75)
+p
+```
+`@sct`
+```{r}
+test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
+            aes_fail_msg = "Something's wrong in the `aes()` layer of your `ggplot()` call. Did you plot `year` on the x-axis and `percent_yes` on the y-axis?",
+            geom_fail_msg = "Did you add a `geom_line` layer with `geom_line()` to your call to `ggplot()`?",
+            facet_fail_msg = "Did you add a facet layer with `facet_wrap()`? Make sure to use the correct syntax: `~ country`.")
+test_error()
+success_msg("Cool! You're killing it! A couple more things and you are done!")
+```
 
 
 
@@ -1012,9 +1044,65 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
-
-
-
+`@sample_code`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+	# The point range
+    geom_pointrage(color = "black", size = 0.75) +
+	# The Title
+	___("___") +
+	# The x and y labels
+  	___("Date") +
+  	___("___") +
+	# The y limit
+	___(0, 50) +
+	# The theme
+  	theme_minimal() +
+	# Further theming
+  	___(axis.text.x=element_text(angle=___)) +
+  	theme(axis.title.x=element_blank())
+p
+```
+`@solution`
+```{r}
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+	# The point range
+    geom_pointrage(color = "black", size = 0.75) +
+	# The Title
+	ggtitle("The cloudier the day, the narrower the band") +
+	# The x and y labels
+  	xlab("Date") +
+  	ylab("Air Temperature") +
+	# The y limit
+	ylim(0, 50) +
+	# The theme
+  	theme_minimal() +
+	# Further theming
+  	theme(axis.text.x=element_text(angle=45)) +
+  	theme(axis.title.x=element_blank())
+p
+```
+`@sct`
+```{r}
+test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
+            aes_fail_msg = "Something's wrong in the `aes()` layer of your `ggplot()` call. Did you plot `year` on the x-axis and `percent_yes` on the y-axis?",
+            geom_fail_msg = "Did you add a `geom_line` layer with `geom_line()` to your call to `ggplot()`?",
+            facet_fail_msg = "Did you add a facet layer with `facet_wrap()`? Make sure to use the correct syntax: `~ country`.")
+test_error()
+success_msg("Cool! You're killing it! A couple more things and you are done!")
+```
 
 
 
