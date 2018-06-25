@@ -863,20 +863,16 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
 xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
-
-p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
-
-p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
-  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
-  geom_point(aes(y = min), color = "steelblue", size = 3.5)
 ```
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
-  geom_point(aes(y = max), color = "firebrick", size = 3.5) +
-  geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
-  ___(aes(y = ___), color = "firebrick", size = ___, group = ___) + 
-  ___(___(y = max), color = "___", size = 1, group = ___)
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	___(aes(y = ___), color = "firebrick", size = ___, group = ___) + 
+  	___(___(y = max), color = "___", size = 1, group = ___)
       
 p
 ```
