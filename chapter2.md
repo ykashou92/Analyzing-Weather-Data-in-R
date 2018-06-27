@@ -1025,8 +1025,12 @@ key: 1e7e2be896
 
 ```
 
+What about creating a range? A line that can show the bandwidth of the day's minimum, maximum. This can be a direct indicator of _**cloudiness**_!
 
+`@instructions`
+Add a `geom_pointrange()` phrase to the plot. You do not need to specify any data, just set the _color_ to **black** and _size_ to **.75**.
 
+`@hint`
 
 
 `@pre_exercise_code`
