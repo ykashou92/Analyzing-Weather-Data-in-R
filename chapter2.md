@@ -343,8 +343,6 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -491,6 +489,8 @@ We will format our `ts` column in two steps:
 1. Convert it from a **factor** (category) object to a **date** object, specifically POSIXct.
 2. Format the column to represent only year-month-day values without hours, minutes or seconds.
 
+You can find a list of the date and time abbreviation symbols [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html):
+
 `@instructions`
 - Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
 - Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` format to a `Year-Month-Day`.
@@ -498,7 +498,7 @@ We will format our `ts` column in two steps:
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
 `@hint`
-
+Both the `strptime()` and `format()` functions require two arguments: __a character vector to be converted__ and __a character sting specifying the format__. Format is a generic function that can reformat any string while strptime works specifically with dates and times.
 
 `@pre_exercise_code`
 ```{r}
@@ -1027,10 +1027,6 @@ key: 1e7e2be896
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 `@pre_exercise_code`
@@ -1120,10 +1116,6 @@ key: 01f706ea05
 
 
 
-`@instructions`
-
-
-`@hint`
 
 
 `@pre_exercise_code`
