@@ -482,7 +482,7 @@ key: 88f9897b09
 
 ```
 
-Time data can take on various forms, we are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1, 1970**_.   
+Time data can take on various forms, we are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1st, 1970**_.   
   
 We will format our `ts` column in two steps:
 
