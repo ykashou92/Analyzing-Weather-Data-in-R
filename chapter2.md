@@ -1118,8 +1118,25 @@ key: 01f706ea05
 
 ```
 
+Hmm, the last plot did not look that great, did it? Here's what we are going to do:
 
+1. We will give the plot a title.
+2. We will label the `x` and `y` axes so we know what we are looking at.
+3. We will change the scale of `y` axis, so the plot does not appear stretched from top to bottom.
+4. We will change the theme of the plot.
+5. Finally, we will tilt the dates on the `x` axis so they become readable.
 
+`@instructions`
+Alright! Let's test your intuition:
+
+1. Use` ggtitle()`, and set the title to "The cloudier the day, the narrower the band".
+2. Use `xlab()` to specify the label of the x-axis to "Date".
+3. Use `ylab()` to specify the label of the y-axis to " Air Temperature" .
+4. Use `ylim()` to specify the y-axis limits from 0 to 50 degrees Celsius.
+5. Use `theme_minimal()` with no arguments to change the theme! Don't forget how to end the line so that it accepts the next phrase.
+6. Use `theme()` to tilt the dates by 45 degrees.
+
+`@hint`
 
 
 `@pre_exercise_code`
@@ -1155,26 +1172,26 @@ colnames(xdf) = cols
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
- 	# The points
-	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
-	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
-	# The lines
-  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
-  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
-	# The point range
+    # The points
+    geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+    geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+    # The lines
+    geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+    geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+    # The point range
     geom_pointrange(color = "black", size = 0.75) +
-	# The Title
-	___("___") +
-	# The x and y labels
-  	___("Date") +
-  	___("___") +
-	# The y limit
-	___(0, 50) +
-	# The theme
-  	theme_minimal() +
-	# Further theming
-  	___(axis.text.x=element_text(angle=___)) +
-  	theme(axis.title.x=element_blank())
+    # The Title
+    ___("___") +
+    # The x and y labels
+    ___("Date") +
+    ___("___") +
+    # The y limit
+    ___(0, 50) +
+    # The theme
+    ___ ___
+    # Further theming
+    ___(axis.text.x=element_text(angle=___)) +
+    theme(axis.title.x=element_blank())
 p
 ```
 `@solution`
