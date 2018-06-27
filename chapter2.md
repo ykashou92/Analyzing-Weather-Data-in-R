@@ -486,13 +486,13 @@ Time data can take on various forms, we are concerned specifically with the **PO
   
 We will format our `ts` column in two steps:
 
-1. Convert it from a **factor** (category) object to a list of **date** objects, specifically POSIXct.
-2. Convert it to a **character** column by formatting the column to represent only year-month-day values without hours, minutes or seconds.
+1. Convert it from a **factor** (category) object to a **list** of *date* objects, specifically POSIXct.
+2. Convert it to a **character** object by formatting the column to represent only year-month-day values without hours, minutes or seconds.
 
 You can find a list of the date and time abbreviation symbols [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html):
 
 `@instructions`
-- Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `"%Y-%m-%d %H:%M:%S"`
+- Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `Year-Month-Day Hour:Minute:Second`
 - Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` format to a `Year-Month-Day`.
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
