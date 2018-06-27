@@ -1232,3 +1232,104 @@ success_msg("Cool! You're killing it! A couple more things and you are done!")
 
 
 
+
+
+---
+## Conclusion
+
+```yaml
+type: MultipleChoiceExercise
+
+xp: 50
+
+key: 548a3b5e63
+
+
+
+```
+
+Run the code. Out of the 10 days you see  in front of you? 
+
+Which day was the cloudiest? 
+
+Which day was the least cloudy?
+
+`@instructions`
+1. The 19th, 20th, and the 21st were the cloudiest, while the 29th was the least cloudy.
+2. The 24th was the cloudiest, while the 29th was least cloudy.
+3. The 23th was the cloudiest, while the 25th was least cloudy.
+4. [The 29th was the cloudiest, while the 24th was least cloudy.]
+
+`@hint`
+The title says it all!
+
+`@pre_exercise_code`
+```{r}
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(lubridate)
+library(dplyr)
+
+# Read the data
+data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
+df <- read.delim(file = data, sep = ",", skip=1)   
+cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
+colnames(df) = cols
+
+# Subset and prepare the data
+df <- tail(df, 240)
+# Use dplyr's select function
+df <- dplyr::select(df, c(ts, temp))
+
+# Reformat the 'ts' column
+df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
+df$ts <- format(df$ts, "%Y-%m-%d")
+
+xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
+  c(max = max(x), min = min(x), avg = mean(x)) })
+
+xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
+cols <- c("ts", "max", "min","avg")
+colnames(xdf) = cols
+
+p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
+ 	# The points
+	geom_point(aes(y = max), color = "firebrick", size = 3.5) +
+	geom_point(aes(y = min), color = "steelblue", size = 3.5) + 
+	# The lines
+  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
+  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1) +
+	# The point range
+    geom_pointrange(color = "black", size = 0.75) +
+	# The Title
+	ggtitle("The cloudier the day, the narrower the band") +
+	# The x and y labels
+  	xlab("Date") +
+  	ylab("Air Temperature") +
+	# The y limit
+	ylim(0, 50) +
+	# The theme
+  	theme_minimal() +
+	# Further theming
+  	theme(axis.text.x=element_text(angle=45)) +
+  	theme(axis.title.x=element_blank())
+p
+```
+
+
+`@sct`
+```{r}
+msg1 <- "Incorrect."
+msg2 <- "Incorrect."
+msg3 <- "Incorrect."
+msg4 <- "Correct!"
+
+
+
+test_mc(correct=4,  feedback_msgs = c(msg1, msg2, msg3, msg4))
+```
+
+
+
+
