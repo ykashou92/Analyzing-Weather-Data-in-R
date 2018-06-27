@@ -493,7 +493,7 @@ You can find a list of the date and time abbreviation symbols [here](https://sta
 
 `@instructions`
 - Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `Year-Month-Day Hour:Minute:Second`
-- Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` format to a `Year-Month-Day`.
+- Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` **list** object to a `Year-Month-Day` **character** object.
 
 We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
