@@ -1216,7 +1216,9 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   	theme_minimal() +
 	# Further theming
   	theme(axis.text.x=element_text(angle=45)) +
-  	theme(axis.title.x=element_blank())
+  	theme(axis.title.x=element_blank()) + 
+	# This simply centers the title.
+	theme(plot.title = element_text(hjust = 0.5))
 p
 ```
 `@sct`
