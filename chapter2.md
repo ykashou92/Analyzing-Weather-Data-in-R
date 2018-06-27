@@ -72,7 +72,9 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   ggtitle("The cloudier the day, the narrower the band") +
   theme_minimal() +
   theme(axis.text.x=element_text(angle=45)) +
-  theme(axis.title.x=element_blank())
+  theme(axis.title.x=element_blank()) + 
+	# This simply centers the title.
+	theme(plot.title = element_text(hjust = 0.5))
 p
 ```
 `@sample_code`
@@ -118,7 +120,9 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   ggtitle("The cloudier the day, the narrower the band") +
   theme_minimal() +
   theme(axis.text.x=element_text(angle=45)) +
-  theme(axis.title.x=element_blank())
+  theme(axis.title.x=element_blank()) +
+  # This simply centers the title.
+  theme(plot.title = element_text(hjust = 0.5))
 p
 ```
 `@solution`
@@ -164,7 +168,9 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   ggtitle("The cloudier the day, the narrower the band") +
   theme_minimal() +
   theme(axis.text.x=element_text(angle=45)) +
-  theme(axis.title.x=element_blank())
+  theme(axis.title.x=element_blank()) +
+  # This simply centers the title.
+  theme(plot.title = element_text(hjust = 0.5))
 p
 ```
 `@sct`
