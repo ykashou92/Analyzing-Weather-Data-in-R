@@ -8,3 +8,4 @@ install_version("lubridate", "1.7.4")
 install_version("dplyr", "0.7.5")
 ##### Install packages in development from GitHub #####
 install_github("tidyverse/ggplot2")
+install_github('davidcarslaw/openair')
