@@ -193,7 +193,8 @@ xp: 100
 
 key: c7a40a5a73
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -256,7 +257,8 @@ xp: 100
 
 key: 768d0c5d2f
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -326,7 +328,8 @@ xp: 100
 key: 290e1b01ca
 
 
-
+lang: r
+skills: 1
 ```
 
 We would like to rename the columns into something short and smart. Use the console to take a look at the column names and how we will map them by calling `head(df, 2)`
@@ -403,7 +406,8 @@ xp: 100
 
 key: 400058a13c
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -484,7 +488,8 @@ xp: 100
 
 key: 88f9897b09
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -578,7 +583,8 @@ xp: 100
 key: fba56b2895
 
 
-
+lang: r
+skills: 1
 ```
 
 So that's all interesting, but wouldn't it be cooler to find the minimum, maximum and average temperature in a single line of code?
@@ -660,7 +666,8 @@ xp: 100
 
 key: a87cae653d
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -763,7 +770,8 @@ xp: 100
 
 key: 3af49d5904
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -848,7 +856,8 @@ xp: 100
 
 key: e578c9252b
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -936,7 +945,8 @@ xp: 100
 
 key: af34272c37
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -1027,7 +1037,8 @@ xp: 100
 
 key: 1e7e2be896
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -1120,7 +1131,8 @@ xp: 100
 
 key: 01f706ea05
 
-
+lang: r
+skills: 1
 
 ```
 
@@ -1252,7 +1264,8 @@ xp: 50
 
 key: 548a3b5e63
 
-
+lang: r
+skills: 1
 
 ```
 
