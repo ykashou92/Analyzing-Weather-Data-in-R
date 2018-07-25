@@ -1,8 +1,7 @@
 ---
-title: Where is the wind with the highest energy coming from?
-description: >-
-  undefined
-
+    title: Where is the wind with the highest energy coming from?
+    description: Finally some math and functional programming in R.
+    v2: true
 
 ---
 ## Line Plot

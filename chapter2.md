@@ -1,6 +1,6 @@
 ---
   title: "Is it more humid than normal?"
-  description: "Insert the chapter description here"
+  description: "Can we find a `typical` temperature?"
   v2: true
 
 ---

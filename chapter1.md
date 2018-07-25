@@ -1,6 +1,6 @@
 ---
   title: "Is it cloudy today?"
-  description: "This is a template chapter."
+  description: "We can figure out if it is cloudy or not by visualizing our data."
   v2: true
 
 ---
