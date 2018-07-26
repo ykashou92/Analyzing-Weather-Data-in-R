@@ -17,14 +17,14 @@ key: 33e93d2cb0
 
 ```
 
-Visualizing our data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions we pose in our data pipeline. We will use the plots to gain intuition into the data. In this chapter, we will be plotting temperature bands to determine cloudiness.
+Visualizing data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions you pose in our data pipeline. You will use the plots to gain intuition into the data. In this chapter, you will be plotting temperature bands to determine cloudiness.
 
 The cloudier the day, the narrower the temperature range. This is because clouds prevent heat from entering the atmosphere and also cause heat to be trapped on Earth, thus decreasing the amount of energy Earth receives from the Sun and the amount of energy  that leaves Earth. 
 
 And vice versa...
 
 `@instructions`
-Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. We will be constructing this plot step-by-step from scratch. When you are ready, press submit to move to the first exercise.
+Take a look at the plot on the right and the corresponding code. Read through it and don't worry if you don't understand it completely. You will be constructing this plot step-by-step from scratch. When you are ready, press submit to move to the first exercise.
 
 `@hint`
 Did you read through the code?
@@ -198,7 +198,7 @@ skills: 1
 
 ```
 
-To build our plot, we first need to import a few libraries:
+To build our plot, you first need to import a few libraries:
 
 - **scales** To change and modify the scaling of the plot  
 - **ggplot2** To actually build the plot using a "grammar of graphics"  
@@ -207,7 +207,7 @@ To build our plot, we first need to import a few libraries:
 - **dplyr** To easily select columns from the dataframe
 
 `@instructions`
-We can import a library (for instance: the library **rvest**) like so:  
+You can import a library (for instance: the library **rvest**) like so:  
 `library(rvest)`
 
 Import `scales`,  `ggplot2`, `reshape2`, `lubridate` and `dplyr` like the example above.
@@ -218,7 +218,7 @@ You can write each import on a separate line and in any order you wish.
 
 `@sample_code`
 ```{r}
-# This is how we import libraries in R
+# This is how you import libraries in R
 # library(rvest)
 ```
 `@solution`
@@ -262,7 +262,7 @@ skills: 1
 
 ```
 
-Now it's time to import our data like we learned in the first chapter.
+Now it's time to import your data.
 The libraries have already been imported in the background, but we kept the code invisible to you so you can keep focus on the current task.
 
 Our data is hosted on [https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat](https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat).
@@ -332,7 +332,7 @@ lang: r
 skills: 1
 ```
 
-We would like to rename the columns into something short and smart. Use the console to take a look at the column names and how we will map them by calling `head(df, 2)`
+We would like to rename the columns into something short and smart. Use the console to take a look at the column names and how you will map them by calling `head(df, 2)`
 
 Original | Mapping | Meaning | Unit
 --- | --- | --- | ---
@@ -388,7 +388,7 @@ colnames(df)= cols
 test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("`Nice! We are one step closer. Let's continue...")
+success_msg("`Nice! You are one step closer. Let's continue...")
 ```
 
 
@@ -411,10 +411,10 @@ skills: 1
 
 ```
 
-So we have the data. Now we ask: What parts of these data do we need?  We are going to visualize temperature over a period of time. Hence we only select the columns we need and the number of rows we wish to represent such that we create an aesthetically pleasing graph that is easy to read and fast to run.
+So you have the data. Now you can ask: 'What parts of these data do I need?'. In this case you are going to visualize temperature over a period of time. Hence you should only select the columns you need and the number of rows you wish to represent such that you create an aesthetically pleasing graph that is easy to read and fast to run.
 
 `@instructions`
-We can use functions from a specific library, especially if another function with the same name exists in another library (in this case, they both will work.)
+You can use functions from a specific library, especially if another function with the same name exists in another library (in this case, they both will work.)
 `dplyr::select()` instead of `select()`.
 
 Here's what you should do:
@@ -424,7 +424,7 @@ Here's what you should do:
 - Verify that it worked with by calling the `str()` function on our dataframe.
 
 `@hint`
-The `tail(...)` function can select the last N rows and we are dealing with hourly data. How many rows will represent that last 10-day period?
+The `tail(...)` function can select the last N rows and you are dealing with hourly data. How many rows will represent that last 10-day period?
 
 `@pre_exercise_code`
 ```{r}
@@ -493,9 +493,9 @@ skills: 1
 
 ```
 
-Time data can take on various forms, we are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1st, 1970**_.   
+Time data can take on various forms, you are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1st, 1970**_.   
   
-We will format our `ts` column in two steps:
+You will format our `ts` column in two steps:
 
 1. Convert it from a **factor** (category) object to a **list** of *date* objects, specifically POSIXct.
 2. Convert it to a **character** object by formatting the column to represent only year-month-day values without hours, minutes or seconds.
@@ -506,7 +506,7 @@ You can find a list of the date and time abbreviation symbols [here](https://sta
 - Use the `strptime(...)` function to convert the `ts` column from a **factor** to a **date (POSIXct)**.  You need to specify the format of the date `Year-Month-Day Hour:Minute:Second`
 - Use the `format(...)` function to convert the column from a `Year-Month-Day Hour:Minute:Second` **list** object to a `Year-Month-Day` **character** object.
 
-We have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
+You have written `str(df$ts)` to run on every step such that you may keep track of the changes of the date's format before and after each conversion and gain better intuition.
 
 `@hint`
 Both the `strptime()` and `format()` functions require two arguments: __a character vector to be converted__ and __a character sting specifying the format__. Format is a generic function that can reformat any string while strptime works specifically with dates and times.
@@ -536,7 +536,7 @@ df <- dplyr::select(df, c(ts, temp))
 ```
 `@sample_code`
 ```{r}
-# We can select a specific column from the dataframe by using $ sign. 
+# You can select a specific column from the dataframe by using $ sign. 
 # df$ts selects the ts column, in each step will with replace the column with its result
 
 # Verify
@@ -671,7 +671,7 @@ skills: 1
 
 ```
 
-This is our final step before visualizing our data. The aggregated data frame `xdf` actually needs to be reshaped. See it appears like a normal data frame, but it the mean, minimum and maximum columns are actually nested within the timestamp, instead of alongside it. The data frame we have now is a __multi-index__ data frame.
+This is our final step before visualizing our data. The aggregated data frame `xdf` actually needs to be reshaped. See it appears like a normal data frame, but it the mean, minimum and maximum columns are actually nested within the timestamp, instead of alongside it. The data frame you now have is a __multi-index__ data frame.
 
 Try the commands in the coding section to better understand the data.
 
@@ -681,7 +681,7 @@ Use `cbind()` to bind the first column of `xdf`, to the three sub-columns contai
 - `cbind()` the correct columns and assign it to the same variable `xdf`.
 
 `@hint`
-Remember that we can subset using square bracket notation. `df[5]` selects the **5th** column of the data frame.
+Remember that you can subset using square bracket notation. `df[5]` selects the **5th** column of the data frame.
 
 `@pre_exercise_code`
 ```{r}
@@ -714,10 +714,10 @@ xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
 ```
 `@sample_code`
 ```{r}
-# Number of 'actual' columns in data frame (what we want is 4 - ts, max, min, avg)
+# Number of 'actual' columns in data frame (what you want is 4 - ts, max, min, avg)
 print(paste("Number of columns in xdf:",ncol(xdf)))
 
-# Since ncol is 2, we cannot choose any columns other than 1 and 2.
+# Since ncol is 2, you cannot choose any columns other than 1 and 2.
 # Let's subset column 1 and view it
 print(paste("The 1st column of xdf:", xdf[1]))  
 
@@ -728,7 +728,7 @@ print(paste("The 2nd column of xdf:", xdf[2]))
 # Subsetting will take one extra bracket.
 print(paste("Looking deeper into the 2nd column of xdf:", xdf[[2]])
 
-# So we will `cbind` or column bind the first column, with the other three.
+# So you will `cbind` or column bind the first column, with the other three.
 xdf <- cbind(xdf[___], xdf[[___]])
 
 # Let's call ncol again
@@ -740,7 +740,7 @@ colnames(xdf) <- cols
 ```
 `@solution`
 ```{r}
-# So we will `cbind` or column bind the first column, with the other three.
+# So you will `cbind` or column bind the first column, with the other three.
 xdf <- cbind(xdf[1], xdf[[2]])
 
 # Finally let's reassign the column names
@@ -775,7 +775,7 @@ skills: 1
 
 ```
 
-Now that we have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, we first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
+Now that you have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, you first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
 
 Note that you do not have to use the column selector `$` in the `aes` argument of `ggplot()`. Instead you can simply type `ts` to reference the `ts` column of the data frame `df` if `df` is given as the data argument.
 
@@ -861,8 +861,8 @@ skills: 1
 
 ```
 
-When we save a plot to a variable, it gives us power to add `layers` on the plot. This is simply given by the addition symbol `+`. Check the sample code.
-The `geom_point()` function is how we plot **points**, the `geom_line()` function is how we plot **lines**. They both can take a large number of arguments that change how they appear on the graph.
+When you save a plot to a variable, it gives you power to add `layers` on the plot. This is simply given by the addition symbol `+`. Check the sample code.
+The `geom_point()` function is how you plot **points**, the `geom_line()` function is how you plot **lines**. They both can take a large number of arguments that change how they appear on the graph.
 
 `@instructions`
 Use `geom_point()` to:  
@@ -952,7 +952,7 @@ skills: 1
 
 Time to plot the lines with `geom_line()`!
 
-We will do the same as in the previous lesson, except with one difference we will add an extra argument `group = 1` to each of them to connect the lines together.
+You will do the same as in the previous lesson, except with one difference you will add an extra argument `group = 1` to each of them to connect the lines together.
 
 `@instructions`
 Use `geom_line()` to:
@@ -1136,13 +1136,13 @@ skills: 1
 
 ```
 
-Hmm, the last plot did not look that great, did it? Here's what we are going to do:
+Hmm, the last plot did not look that great, did it? Here's what you are going to do:
 
-1. We will give the plot a title.
-2. We will label the `x` and `y` axes so we know what we are looking at.
-3. We will change the scale of `y` axis, so the plot does not appear stretched from top to bottom.
-4. We will change the theme of the plot.
-5. Finally, we will tilt the dates on the `x` axis so they become readable.
+1. You will give the plot a title.
+2. You will label the `x` and `y` axes so you know what you are looking at.
+3. You will change the scale of `y` axis, so the plot does not appear stretched from top to bottom.
+4. You will change the theme of the plot.
+5. Finally, you will tilt the dates on the `x` axis so they become readable.
 
 `@instructions`
 Alright! Let's test your intuition:
@@ -1269,7 +1269,7 @@ skills: 1
 
 ```
 
-Run the code. Out of the 10 days you see  in front of you? 
+Run the code. Out of the 10 days you see in front of you:
 
 Which day was the cloudiest? 
 
