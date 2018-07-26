@@ -17,9 +17,9 @@ key: 33e93d2cb0
 
 ```
 
-Visualizing data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions you pose in our data pipeline. You will use the plots to gain intuition into the data. In this chapter, you will be plotting temperature bands to determine cloudiness.
+Visualizing data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes and effects in your projects. Plots are a creative way of answering the questions you pose in the data pipeline. You will use plots to gain intuition into the data. In this chapter, you will be plotting temperature bands to determine cloudiness.
 
-The cloudier the day, the narrower the temperature range. This is because clouds prevent heat from entering the atmosphere and also cause heat to be trapped on Earth, thus decreasing the amount of energy Earth receives from the Sun and the amount of energy  that leaves Earth. 
+The cloudier the day, the narrower the temperature range. This is because clouds prevent heat from entering the atmosphere and also cause heat to be trapped on Earth, thus decreasing the amount of energy Earth receives from the Sun and the amount of energy that leaves Earth. 
 
 And vice versa...
 
@@ -198,7 +198,7 @@ skills: 1
 
 ```
 
-To build our plot, you first need to import a few libraries:
+To build your plot, you first need to import a few libraries:
 
 - **scales** To change and modify the scaling of the plot  
 - **ggplot2** To actually build the plot using a "grammar of graphics"  
@@ -262,10 +262,10 @@ skills: 1
 
 ```
 
-Now it's time to import your data.
+Now it's time to read in your data.
 The libraries have already been imported in the background, but we kept the code invisible to you so you can keep focus on the current task.
 
-Our data is hosted on [https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat](https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat).
+The data is hosted on [https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat](https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat).
 
 `@instructions`
 You will be using two functions to perform this; `url(...)` and `read.delim(file = ..., sep = ..., skip = ...)`
@@ -332,7 +332,7 @@ lang: r
 skills: 1
 ```
 
-We would like to rename the columns into something short and smart. Use the console to take a look at the column names and how you will map them by calling `head(df, 2)`
+Preferably, you would want to have columns with brief and memorable names. Use the console to take a look at the column names and how you will map them by calling `head(df, 2)`
 
 Original | Mapping | Meaning | Unit
 --- | --- | --- | ---
@@ -411,7 +411,7 @@ skills: 1
 
 ```
 
-So you have the data. Now you can ask: 'What parts of these data do I need?'. In this case you are going to visualize temperature over a period of time. Hence you should only select the columns you need and the number of rows you wish to represent such that you create an aesthetically pleasing graph that is easy to read and fast to run.
+So you have the data. Now you can ask: __'What parts of these data do I need?'__. In this case you are going to visualize temperature over a period of time. Hence you should only select the columns you need and the number of rows you wish to represent such that you create an aesthetically pleasing graph that is easy to read and fast to run.
 
 `@instructions`
 You can use functions from a specific library, especially if another function with the same name exists in another library (in this case, they both will work.)
@@ -492,7 +492,6 @@ lang: r
 skills: 1
 
 ```
-
 Time data can take on various forms, you are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1st, 1970**_.   
   
 You will format our `ts` column in two steps:
