@@ -1,21 +1,20 @@
 ---
-    title: Where is the wind with the highest power coming from?
-    description: Finally some math and functional programming in R.
-    v2: true
-
-
-
+  title: "Where is the wind with the highest power coming from?"
+  description: "Finally some math and functional programming in R."
 ---
+
 ## Overview: The Wind Rose
 
 ```yaml
-type: NormalExercise
-key: b0437f91cf
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: b0437f91cf   
 ```
-Meteorologists usually create a **pollution rose** or a **wind rose** in order to show the distribution of pollutants and particles in the air. These are beautiful plots that take into account the wind speed and direction, but you want to find the direction from which the wind with the highest _power_ is coming from. And this demands some functional program and a bit of math. Oh and Wikipedia!
+
+
+Meteorologists usually create a **pollution rose** or a **wind rose** in order to show the distribution of pollutants and particles in the air. These are beautiful plots that take into account the wind speed and direction, but you want to find the direction from which the wind with the highest _power_ is coming from. And this demands some functional programming and a bit of math. Oh and Wikipedia!
 
 While faster winds have faster speeds, air density plays an important role.
 
@@ -25,25 +24,49 @@ While faster winds have faster speeds, air density plays an important role.
 - Read through [this](https://en.wikipedia.org/wiki/Wind_power#Wind_energy) Wikipedia section on calculating wind energy and power.
 - Click submit when you are done.
 
+`@hint`
+
+
+`@pre_exercise_code`
+
+```{r}
+
+```
+
+
+`@sample_code`
+
+```{r}
+
+```
+
+
+`@solution`
+
+```{r}
+
+```
+
 
 `@sct`
+
 ```{r}
 success_msg("Alright! Let's get to it!")
 ```
 
-
-
-
 ---
+
 ## R Functions - Example
 
 ```yaml
-type: NormalExercise
-key: ae3e36862b
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: ae3e36862b   
 ```
+
+
 In case you are unfamiliar with functions, you will create a basic function of __two inputs__ and a __single output__.
 Functions are created using `function(inputs)` like so:
 ```
@@ -53,14 +76,13 @@ example_function <- function(input) {
 ```
 This function returns double the value of the input. Notice that the code to calculate is nested inside the parenthesis `{}`
 
+
 `@instructions`
-
 - Create a function called `add_xyz`, that takes inputs `x`, `y` and `z` and returns the sum of all three when called.  
-- Call the function using any values of `x`, `y` and `z`.  
-
-
+- Call the function using any values of `x`, `y` and `z`.
 
 `@sample_code`
+
 ```{r}
 ___ <- ___(x, ___, ___) {
     ___(___ + ___ + ___ )
@@ -70,32 +92,35 @@ add_xyz(___, ___, ___)
 ```
 
 `@solution`
+
 ```{r}
 add_xyz <- function(x, y, z) {
     return(x + y + z )
 }
 ```
 
-
 `@sct`
+
 ```{r}
 test_object("add_xyz", incorrect_msg = "Something is wrong with `add_xyz`. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("`Nice! Onwards to more relevant functions") 
+success_msg("`Nice! Onwards to more relevant functions")
 ```
 
-
 ---
+
 ## Calculating Air Density: Part 1
 
 ```yaml
-type: NormalExercise
-xp: 100
-key: 5e9efdfa1f
+type: NormalExercise 
 lang: r
+xp: 100 
 skills: 1
+key: 5e9efdfa1f   
 ```
+
+
 Calculating air density is a bit of a hassle, but no worries! To find the wind power, you must already know the air density.
 
 
@@ -107,17 +132,6 @@ Inside the function you may specify the constants you encountered on Wikipedia e
 - $ R_d = 287.058 $ as `R_d`
 - $ R_v = 461.495 $ as `R_v`
 
-
-
-`@hint`
-
-
-
-`@pre_exercise_code`
-
-```{r}
-
-```
 `@sample_code`
 
 ```{r}
@@ -137,7 +151,9 @@ ___ <- ___(df) {
     return(air_density)
 }
 ```
+
 `@solution`
+
 ```{r}
 calculate_air_density <- function(df){
     
@@ -155,42 +171,39 @@ calculate_air_density <- function(df){
     return(air_density)
   }
 ```
+
 `@sct`
+
 ```{r}
 test_object("calculate_air_density", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("`Nice! Time for the second part.") 
+success_msg("`Nice! Time for the second part.")
 ```
 
-
-
-
 ---
+
 ## Calculating Air Density: Part 2
 
 ```yaml
-type: NormalExercise
-key: 795c332365
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 795c332365   
 ```
+
+
 To continue, there are some variable you can calculate from data that you already have! Scroll down to Part 2.
+
 
 `@instructions`
 1. Assign the `rh` column of the data frame to the variable `phi`. (line 17)
 2. Calculate the __absolute__ temperature by adding `273.15` to the `temp` column of the data frame. Assign it to `abs_temp`. (line 20)
 3. Find the absolute pressure `p` by multiply the `bp` column by `100` to obtain the pressure in __Pascals__. (line 23)
 
-`@hint`
-
-`@pre_exercise_code`
-```{r}
-
-```
-
 `@sample_code`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -224,6 +237,7 @@ calculate_air_density <- function(df){
 ```
 
 `@solution`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -254,28 +268,30 @@ calculate_air_density <- function(df){
 ```
 
 `@sct`
+
 ```{r}
 test_object("calculate_air_density", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("`Cool! You are half-way there!") 
+success_msg("`Cool! You are half-way there!")
 ```
 
-
-
-
 ---
+
 ## Calculating Air Density: Part 3
 
 ```yaml
-type: NormalExercise
-key: 58ef687a35
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 58ef687a35   
 ```
+
+
 Three equations before the final one.
 Scroll down to Part 3.
+
 
 `@instructions`
 We have written two of these equations as they are very trivial. You are left with the task to implement the following saturation vapor pressure equation (line 28): 
@@ -286,15 +302,8 @@ Assign it to the variable `p_sat`.
 
 Note: it is multiplied by 100 to convert it to Pascals, also T is in Celsius not in Kelvin.
 
-
-`@hint`
-
-`@pre_exercise_code`
-```{r}
-
-```
-
 `@sample_code`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -337,6 +346,7 @@ calculate_air_density <- function(df){
 ```
 
 `@solution`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -379,41 +389,40 @@ calculate_air_density <- function(df){
 ```
 
 `@sct`
+
 ```{r}
 test_object("calculate_air_density", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("`Nice! One more part to go!") 
+success_msg("`Nice! One more part to go!")
 ```
 
-
-
-
-
 ---
+
 ## Calculating Air Density: Part 4
 
 ```yaml
-type: NormalExercise
-key: d3ba462131
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: d3ba462131   
 ```
+
+
 Finally, the equation for air density:
 
 $ \rho_{\,\mathrm{humid~air}} = \frac{p\_{d}}{R\_dT} + \frac{p\_{v}}{R\_vT}$
 
-`@instructions`
 
+`@instructions`
 - Implement the equation in code and assign it to the variable `air_density`. (line 39)
 - Run the function on the dataframe `df`. (line 46)
 
 Note: T is in Kelvin not Celsius. Remember, you assigned this to a certain variable.
 
-`@hint`
-
 `@pre_exercise_code`
+
 ```{r}
 library(scales)
 library(reshape2)
@@ -430,6 +439,7 @@ colnames(df) = cols
 ```
 
 `@sample_code`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -480,6 +490,7 @@ ___(df)
 ```
 
 `@solution`
+
 ```{r}
 calculate_air_density <- function(df){
 
@@ -529,23 +540,28 @@ calculate_air_density(df)
 ```
 
 `@sct`
+
 ```{r}
 test_object("calculate_air_density", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("That's some good work! Next you will calculate the wind power!") 
+success_msg("That's some good work! Next you will calculate the wind power!")
 ```
 
 ---
+
 ## Calculating Wind Power
 
 ```yaml
-type: NormalExercise
-key: d5124d9a8f
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: d5124d9a8f   
 ```
+
+
+
 
 
 `@instructions`
@@ -555,12 +571,13 @@ skills: 1
 $$ P = \frac{1}{2}A \rho v^3 $$
 
 - Call the function and save the result to a variable called `wind_power`. 
-Note: Use `A = 1` when calling the function at the end as you do not have a collecting area (wind turbine). So this will measure the estimated wind power incident on 1 meter squared of area. 
+Note: Use `A = 1` when calling the function at the end as you do not have a collecting area (wind turbine). So this will measure the estimated wind power incident on 1 meter squared of area.
 
 `@hint`
 Don't forget the `return()` statement!
 
 `@pre_exercise_code`
+
 ```{r}
 library(scales)
 library(reshape2)
@@ -621,6 +638,7 @@ calculate_air_density <- function(df){
 ```
 
 `@sample_code`
+
 ```{r}
 # Calculate the air density
 ___ <- ___(___)
@@ -636,6 +654,7 @@ wind_power <- calculate_wind_power(1, ___, df$ws)
 ```
 
 `@solution`
+
 ```{r}
 air_density <- calculate_air_density(df)
 calculate_wind_power <- function(area, air_density, wind_speed) {
@@ -644,30 +663,32 @@ calculate_wind_power <- function(area, air_density, wind_speed) {
 }
 
 wind_power <- calculate_wind_power(1, air_density, df$ws)
-
 ```
 
 `@sct`
+
 ```{r}
 test_object("calculate_wind_power", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
 test_error()
-success_msg("Time for plotting!") 
+success_msg("Time for plotting!")
 ```
 
-
-
 ---
+
 ## Plotting the Windrose: Part 1
 
 ```yaml
-type: NormalExercise
-key: 618f66c1f8
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 618f66c1f8   
 ```
+
+
 You will now prepare the data for the windrose.
+
 
 `@instructions`
 - Import the library `openair`
@@ -675,6 +696,7 @@ You will now prepare the data for the windrose.
 - Create a dataframe `wind_df` that contains only two columns `wind_power` (you calculated this in the last exercise) and `wind_direction` (already present in the dataframe `df` as `wd`)
 
 `@pre_exercise_code`
+
 ```{r}
 library(scales)
 library(reshape2)
@@ -744,6 +766,7 @@ wind_power <- calculate_wind_power(1, air_density, df$ws)
 ```
 
 `@sample_code`
+
 ```{r}
 # Import openair
 library(openair)
@@ -755,11 +778,10 @@ ___ <- c(___, ___, ___)
 wind_df <- NULL
 wind_df$___ <- wind_power
 ___$___ <- df$___
-
-
 ```
 
 `@solution`
+
 ```{r}
 # Import openair
 library(openair)
@@ -771,11 +793,10 @@ z <- c("dodgerblue", "gray", "firebrick")
 wind_df <- NULL
 wind_df$wind_power <- wind_power
 wind_df$wind_direction <- df$wd
-
-
 ```
 
 `@sct`
+
 ```{r}
 test_object("wind_df", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
@@ -783,28 +804,30 @@ test_error()
 success_msg("Time for plotting!")
 ```
 
-
 ---
+
 ## Plotting the Windrose: Part 2
 
 ```yaml
-type: NormalExercise
-key: 392b80a9db
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 392b80a9db   
 ```
+
 
 Traditionally, using the `windRose()` function demands `ws` and a `wd` arguments, short for wind speed and wind direction respectively. But keep in mind that you want to plot the wind power!
 
 
 `@instructions`
-- Use the `windRose()` function appropriately. Pass `wind_power` into the `ws` argument and `wind_direction` into `wd`. 
+- Use the `windRose()` function appropriately. Pass `wind_power` into the `ws` argument and `wind_direction` into `wd`.
 
 `@hint`
 By now you should know that your hint comes from your own research `?windRose()`.
 
 `@pre_exercise_code`
+
 ```{r}
 library(scales)
 library(reshape2)
@@ -886,18 +909,21 @@ wind_df <- data.frame(wind_df)
 ```
 
 `@sample_code`
+
 ```{r}
 # Plot the rose
 ___(mydata = ___, ws = "___", wd = "___", cols = ___, annotate = FALSE)
 ```
 
 `@solution`
+
 ```{r}
 # Plot the rose
 windRose(mydata = wind_df, ws = "wind_power", wd = "wind_direction", cols = z, annotate = FALSE)
 ```
 
 `@sct`
+
 ```{r}
 test_object("windRose", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
 
@@ -906,17 +932,20 @@ success_msg("Time for plotting!")
 ```
 
 ---
+
 ## Conclusion
 
 ```yaml
-type: MultipleChoiceExercise
-key: 35d7f4b05d
+type: MultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 35d7f4b05d   
 ```
 
+
 Where is the wind with the highest power coming from?
+
 
 `@instructions`
 Calculate the median humidity of the last day and select the correct statement.
@@ -927,6 +956,7 @@ Calculate the median humidity of the last day and select the correct statement.
 4. North-West
 
 `@pre_exercise_code`
+
 ```{r}
 library(scales)
 library(reshape2)
@@ -1011,6 +1041,7 @@ windRose(mydata = wind_df, ws = "wind_power", wd = "wind_direction", cols = z, a
 ```
 
 `@sct`
+
 ```{r}
 msg1 <- "Incorrect."
 msg2 <- "Incorrect."
