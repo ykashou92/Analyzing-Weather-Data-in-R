@@ -1,30 +1,33 @@
 ---
-  title: "Is it more humid than normal?"
-  description: "Can we find a `typical` temperature?"
-  v2: true
-
+title: 'Is it more humid than normal?'
+description: 'Can we find a `typical` temperature?'
 ---
+
 ## Overview: Typical = Median, not Average
+
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: fe1baa991d
-
-
-
+xp: 100
 ```
+
 When you want to arrive at a _typical_ or _usual_ value for any variable, you want the __median__, not the __mean__.  
 So in this chapter, you will:  
 1. Select and subset the humidity column to obtain the last two weeks of data
 2. Calculate the mean humidity per day (like you calculated the min, max and mean temperature in the last chapter). 
 3. Find the median of the mean values over the two-week period. (Typical humidity over past two-weeks)
-4. Compare it to the median of the last day. 
-
+4. Compare it to the median of the last day.
 
 `@instructions`
 You do not need to do anything other than giving this a thought or two. Then just click submit and the data will be loaded.
+
+`@hint`
+
+
+`@pre_exercise_code`
+```{r}
+
+```
 
 `@sample_code`
 ```{r}
@@ -41,17 +44,18 @@ cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "
 colnames(df) = cols
 ```
 
+`@solution`
+```{r}
+
+```
+
 `@sct`
 ```{r}
 success_msg("Alright! Let's get to it!")
 ```
 
-
-
-
-
-
 ---
+
 ## Selecting and Subsetting
 
 ```yaml
@@ -63,6 +67,7 @@ skills: 1
 ```
 
 
+
 `@instructions`
 - Subset the last two weeks from the data.
 - Select the relative humidity column `rh` using the `select()` function from the `dplyr` package.
@@ -70,7 +75,6 @@ skills: 1
 
 `@hint`
 Use the documentation! Type `?tail` and `?dplyr::select` in the console
-
 
 `@pre_exercise_code`
 ```{r}
@@ -114,9 +118,8 @@ test_error()
 success_msg("`Nice! You have been following through. Let's continue...")
 ```
 
-
-
 ---
+
 ## Mean Humidity per Day
 
 ```yaml
@@ -126,6 +129,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 In the previous chapter you formatted the `ts` (timestamp) column and you aggregated the data to find the minimum, maximum and average temperatures per day. Then you reshaped the data with `cbind()` to make it usable.
 
 You will do all these steps in one go but instead you will apply them to the `rh` column instead of `temp` and find only the mean.
@@ -137,10 +141,8 @@ You can find a list of the date and time abbreviation symbols [here](https://sta
 2. Format the `ts` column as a character date, making sure it displays year, month and day and does not display any hours, minutes or seconds.
 3. Aggregate the `rh` column by the day `ts`. Unlike in the last chapter where you specified multiple functions to aggregate by, this time you only need the `mean` and it is given as argument to the parameters `FUN`.
 
-
 `@hint`
 Use `?` with the function that you need or refer back to the first chapter.
-
 
 `@pre_exercise_code`
 ```{r}
@@ -195,9 +197,8 @@ test_error()
 success_msg("If you got through that, then you can get through anything, good work!")
 ```
 
-
-
 ---
+
 ## Typical Humidity over the past Two Weeks
 
 ```yaml
@@ -207,6 +208,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 
 
 `@instructions`
@@ -268,24 +270,24 @@ test_error()
 success_msg("`Awesome! Simple, no?")
 ```
 
-
 ---
+
 ## Conclusion
 
 ```yaml
 type: MultipleChoiceExercise
 key: 9c564dac47
 lang: r
-xp: 250
+xp: 50
 skills: 1
 ```
+
 Time to put things completely in your hand...here's what you will do, just like you found aggregated the humidity to find the average for each day, now use the console on the right to:
 - Aggregate the `rh` column from the `df` dataframe by the `ts` column to find the median of each day.
 - Subset the last entry in the column and assign it to a variable `median_of_last_day`.
 - Compare `median_of_last_day` and `median_over_two_weeks` and answer the statement.
 
-
-`@instructions`
+`@possible_answers`
 Calculate the median humidity of the last day and select the correct statement.
 
 1. [The last day was less humid than your typical day.]
