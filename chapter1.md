@@ -1,20 +1,16 @@
 ---
-  title: "Is it cloudy today?"
-  description: "We can figure out if it is cloudy or not by visualizing our data."
-  v2: true
-
+title: 'Is it cloudy today?'
+description: 'We can figure out if it is cloudy or not by visualizing our data.'
 ---
+
 ## Overview: Daily Temperature Bands
 
 ```yaml
 type: NormalExercise
+key: 33e93d2cb0
 lang: r
 xp: 100
 skills: 1
-key: 33e93d2cb0
-
-
-
 ```
 
 Visualizing data is extremely important in data science. It can be one of the best tools to determine gaps or identify causes in your projects. Plots are a creative way of answering the questions you pose in our data pipeline. You will use the plots to gain intuition into the data. In this chapter, you will be plotting temperature bands to determine cloudiness.
@@ -77,6 +73,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 	theme(plot.title = element_text(hjust = 0.5))
 p
 ```
+
 `@sample_code`
 ```{r}
 library(scales)
@@ -125,6 +122,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   theme(plot.title = element_text(hjust = 0.5))
 p
 ```
+
 `@solution`
 ```{r}
 library(scales)
@@ -173,29 +171,22 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   theme(plot.title = element_text(hjust = 0.5))
 p
 ```
+
 `@sct`
 ```{r}
 success_msg("Alright! Let's get to it!")
 ```
 
-
-
-
-
-
 ---
+
 ## Importing the Libraries
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: c7a40a5a73
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 To build our plot, you first need to import a few libraries:
@@ -215,12 +206,17 @@ Import `scales`,  `ggplot2`, `reshape2`, `lubridate` and `dplyr` like the exampl
 `@hint`
 You can write each import on a separate line and in any order you wish.
 
+`@pre_exercise_code`
+```{r}
+
+```
 
 `@sample_code`
 ```{r}
 # This is how you import libraries in R
 # library(rvest)
 ```
+
 `@solution`
 ```{r}
 library(scales)
@@ -229,6 +225,7 @@ library(reshape2)
 library(lubridate)
 library(dplyr)
 ```
+
 `@sct`
 ```{r}
 test_student_typed("library(scales)", not_typed_msg="Did you import `scales`?")
@@ -242,24 +239,16 @@ test_error()
 success_msg("Awesome! Let's proceed.")
 ```
 
-
-
-
-
-
 ---
+
 ## Reading the Data
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 768d0c5d2f
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 Now it's time to import your data.
@@ -291,18 +280,21 @@ library(reshape2)
 library(lubridate)
 library(dplyr)
 ```
+
 `@sample_code`
 ```{r}
 # Fill in the blanks!
 ___ <- ___("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 ___ <- read.___(file = ___, sep = ___, skip = ___)
 ```
+
 `@solution`
 ```{r}
 # Read the data
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)
 ```
+
 `@sct`
 ```{r}
 test_object("data", incorrect_msg = "Something is wrong with `data`. Make sure you included the quotation marks in the link.")
@@ -312,23 +304,15 @@ test_error()
 success_msg("`Nice! You have been following through. Let's continue...")
 ```
 
-
-
-
-
-
 ---
+
 ## Renaming the Columns
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 290e1b01ca
-
-
 lang: r
+xp: 100
 skills: 1
 ```
 
@@ -352,6 +336,8 @@ Original | Mapping | Meaning | Unit
 Assign the new column names  instead of the original ones using the `colnames()` function. You can copy and paste them.
 `"ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp"`
 
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -365,6 +351,7 @@ library(dplyr)
 data <- url("https://assets.datacamp.com/production/repositories/2638/datasets/e73949a03c41fd2cbe1de7691ff7adfc624bd22b/CR1000_OneHour.dat")
 df <- read.delim(file = data, sep = ",", skip=1)
 ```
+
 `@sample_code`
 ```{r}
 # Copy the following line into the console and press 'Enter'
@@ -377,11 +364,13 @@ cols <- c(___, ___, ...)
 # The function to change the colnames of a dataframe is called `colnames(...)`
 ___(df) = cols
 ```
+
 `@solution`
 ```{r}
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df)= cols
 ```
+
 `@sct`
 ```{r}
 #test_object("cols", incorrect_msg = "Something is wrong with `data`. Make sure you copied the column names correctly.")
@@ -391,24 +380,16 @@ test_error()
 success_msg("`Nice! You are one step closer. Let's continue...")
 ```
 
-
-
-
-
-
 ---
+
 ## Choosing our Data
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 400058a13c
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 So you have the data. Now you can ask: 'What parts of these data do I need?'. In this case you are going to visualize temperature over a period of time. Hence you should only select the columns you need and the number of rows you wish to represent such that you create an aesthetically pleasing graph that is easy to read and fast to run.
@@ -443,6 +424,7 @@ df <- read.delim(file = data, sep = ",", skip=1)
 cols <- c("ts", "rec", "ws", "wd", "wsc", "srad", "temp", "rh", "rain", "vis", "bp")
 colnames(df) <- cols
 ```
+
 `@sample_code`
 ```{r}
 # Subset the last 10 days
@@ -454,6 +436,7 @@ ___ <- ___::___(df, c(___, ___))
 # Verify with str()
 str(___)
 ```
+
 `@solution`
 ```{r}
 # Subset the last 10 days
@@ -465,6 +448,7 @@ df <- dplyr::select(df, c(ts, temp))
 # Verify with str()
 str(df)
 ```
+
 `@sct`
 ```{r}
 test_object("df", incorrect_msg = "Something is wrong with `df`. Make sure you've used the correct values to the arguments in the function.")
@@ -473,24 +457,16 @@ test_error()
 success_msg("`Nice! You have been following through. Let's continue...")
 ```
 
-
-
-
-
-
 ---
+
 ## Formatting the 'Timestamp' Column
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 88f9897b09
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 Time data can take on various forms, you are concerned specifically with the **POSIXct** data type, which is _**the number of seconds since the start of January 1st, 1970**_.   
@@ -534,6 +510,7 @@ df <- tail(df, 240)
 # Use dplyr's select function
 df <- dplyr::select(df, c(ts, temp))
 ```
+
 `@sample_code`
 ```{r}
 # You can select a specific column from the dataframe by using $ sign. 
@@ -554,11 +531,13 @@ df$ts <- format(df$ts, ___)
 # Verify
 str(df$ts)
 ```
+
 `@solution`
 ```{r}
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 ```
+
 `@sct`
 ```{r}
 test_object("df", incorrect_msg = "Something is wrong with the timestamp column `ts`. Make sure you've used the correct values to the arguments during conversion.")
@@ -567,23 +546,15 @@ test_error()
 success_msg("`Good work! Let's proceed...")
 ```
 
-
-
-
-
-
 ---
+
 ## Finding the Minimum, Maximum and Average Temperature Per Day
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: fba56b2895
-
-
 lang: r
+xp: 100
 skills: 1
 ```
 
@@ -629,6 +600,7 @@ df <- dplyr::select(df, c(ts, temp))
 df$ts <- strptime(df$ts, "%Y-%m-%d %H:%M:%S")
 df$ts <- format(df$ts, "%Y-%m-%d")
 ```
+
 `@sample_code`
 ```{r}
 # Don't fret! It's simpler than you might think.
@@ -638,11 +610,13 @@ xdf <- ___(df$___, by = list(df$___), function(x) {
 
 print(xdf)
 ```
+
 `@solution`
 ```{r}
 xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x), avg = mean(x))})
 ```
+
 `@sct`
 ```{r}
 test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
@@ -651,24 +625,16 @@ test_error()
 success_msg("`Awesome! It's nearly plotting time!")
 ```
 
-
-
-
-
-
 ---
+
 ## Reformatting the aggregated data with `cbind`
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: a87cae653d
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 This is our final step before visualizing our data. The aggregated data frame `xdf` actually needs to be reshaped. See it appears like a normal data frame, but it the mean, minimum and maximum columns are actually nested within the timestamp, instead of alongside it. The data frame you now have is a __multi-index__ data frame.
@@ -712,6 +678,7 @@ df$ts <- format(df$ts, "%Y-%m-%d")
 xdf <- aggregate(df$temp, by = list(df$ts), function(x) {
   c(max = max(x), min = min(x), avg = mean(x)) })
 ```
+
 `@sample_code`
 ```{r}
 # Number of 'actual' columns in data frame (what you want is 4 - ts, max, min, avg)
@@ -738,6 +705,7 @@ ncol(xdf)
 cols <- c("ts", "max", "min", "avg")
 colnames(xdf) <- cols
 ```
+
 `@solution`
 ```{r}
 # So you will `cbind` or column bind the first column, with the other three.
@@ -747,6 +715,7 @@ xdf <- cbind(xdf[1], xdf[[2]])
 cols <- c("ts", "max", "min", "avg")
 colnames(xdf) <- cols
 ```
+
 `@sct`
 ```{r}
 test_object("xdf", incorrect_msg = "Hmm, might want to recheck your code...")
@@ -755,24 +724,16 @@ test_error()
 success_msg("`Awesome! It's nearly plotting time!")
 ```
 
-
-
-
-
-
 ---
+
 ## Plotting: The Aesthetics
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 3af49d5904
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 Now that you have a nice, clean data frame `xdf` ready...Let's begin by plotting the axes. In the `ggplot()` function, you first specify the data source then the aesthetics of the plot, i.e. the data points involved that would be on the **x** and **y** axes.
@@ -818,6 +779,7 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
+
 `@sample_code`
 ```{r}
 # Use the ggplot() function
@@ -829,10 +791,12 @@ p <- ___(___, ___(x = ts, y = ___, ymin = min, ymax = ___))
 # Writing p by itself will view the plot when the code is run
 p
 ```
+
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
 ```
+
 `@sct`
 ```{r}
 test_student_typed("p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))", not_typed_msg = "Something is wrong with your expression. Take another look at the instructions.")
@@ -841,24 +805,16 @@ test_error()
 success_msg("Our plot is in the making! Keep going!")
 ```
 
-
-
-
-
-
 ---
+
 ## Plotting: The data points
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: e578c9252b
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 When you save a plot to a variable, it gives you power to add `layers` on the plot. This is simply given by the addition symbol `+`. Check the sample code.
@@ -906,6 +862,7 @@ colnames(xdf) = cols
 
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max))
 ```
+
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -914,12 +871,14 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 
 p
 ```
+
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
   geom_point(aes(y = max), color = "firebrick", size = 3.5) +
   geom_point(aes(y = min), color = "steelblue", size = 3.5)
 ```
+
 `@sct`
 ```{r}
 test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
@@ -930,24 +889,16 @@ test_error()
 success_msg("Our plot is in the making! Keep going!")
 ```
 
-
-
-
-
-
 ---
+
 ## Plotting: The lines
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: af34272c37
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 Time to plot the lines with `geom_line()`!
@@ -992,6 +943,7 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
+
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1004,6 +956,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
       
 p
 ```
+
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1012,6 +965,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
  	geom_line(aes(y = max), color = "firebrick", size = 1, group = 1) + 
  	geom_line(aes(y = min), color = "steelblue", size = 1, group = 1)
 ```
+
 `@sct`
 ```{r}
 test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
@@ -1022,24 +976,16 @@ test_error()
 success_msg("Cool! You're killing it! A couple more things and you are done!")
 ```
 
-
-
-
-
-
 ---
+
 ## Plotting: The Pointrange
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 1e7e2be896
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 What about creating a range? A line that can show the bandwidth of the day's minimum, maximum. This can be a direct indicator of _**cloudiness**_!
@@ -1080,6 +1026,7 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
+
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1093,6 +1040,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
     ___(___ = "___", ___ = 0.75)
 p
 ```
+
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1106,6 +1054,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
     geom_pointrange(color = "black", size = 0.75)
 p
 ```
+
 `@sct`
 ```{r}
 test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
@@ -1116,24 +1065,16 @@ test_error()
 success_msg("Cool! You're killing it! A couple more things and you are done!")
 ```
 
-
-
-
-
-
 ---
+
 ## Plotting: Axes and Theming
 
 ```yaml
 type: NormalExercise
-
-xp: 100
-
 key: 01f706ea05
-
 lang: r
+xp: 100
 skills: 1
-
 ```
 
 Hmm, the last plot did not look that great, did it? Here's what you are going to do:
@@ -1187,6 +1128,7 @@ xdf <- cbind(xdf[-ncol(xdf)], xdf[[ncol(xdf)]])
 cols <- c("ts", "max", "min","avg")
 colnames(xdf) = cols
 ```
+
 `@sample_code`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1212,6 +1154,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
     theme(axis.title.x=element_blank())
 p
 ```
+
 `@solution`
 ```{r}
 p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
@@ -1239,6 +1182,7 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 	theme(plot.title = element_text(hjust = 0.5))
 p
 ```
+
 `@sct`
 ```{r}
 test_ggplot(data_fail_msg = "Did you use the `filtered_6_countries` as the `data` argument to your `ggplot()` call?",
@@ -1249,24 +1193,16 @@ test_error()
 success_msg("Cool! You're killing it! A couple more things and you are done!")
 ```
 
-
-
-
-
-
 ---
+
 ## Conclusion
 
 ```yaml
 type: MultipleChoiceExercise
-
-xp: 50
-
 key: 548a3b5e63
-
 lang: r
+xp: 50
 skills: 1
-
 ```
 
 Run the code. Out of the 10 days you see in front of you:
@@ -1275,7 +1211,7 @@ Which day was the cloudiest?
 
 Which day was the least cloudy?
 
-`@instructions`
+`@possible_answers`
 1. The 19th, 20th, and the 21st were the cloudiest, while the 29th was the least cloudy.
 2. The 24th was the cloudiest, while the 29th was least cloudy.
 3. The 23th was the cloudiest, while the 25th was least cloudy.
@@ -1338,7 +1274,6 @@ p <- ggplot(xdf, aes(x = ts, y = avg, ymin = min, ymax = max)) +
 p
 ```
 
-
 `@sct`
 ```{r}
 msg1 <- "Incorrect."
@@ -1350,7 +1285,3 @@ msg4 <- "Correct!"
 
 test_mc(correct=4,  feedback_msgs = c(msg1, msg2, msg3, msg4))
 ```
-
-
-
-

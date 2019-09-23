@@ -1,11 +1,8 @@
 ---
-    title: Where is the wind with the highest power coming from?
-    description: Finally some math and functional programming in R.
-    v2: true
-
-
-
+title: 'Where is the wind with the highest power coming from?'
+description: 'Finally some math and functional programming in R.'
 ---
+
 ## Overview: The Wind Rose
 
 ```yaml
@@ -15,26 +12,41 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 Meteorologists usually create a **pollution rose** or a **wind rose** in order to show the distribution of pollutants and particles in the air. These are beautiful plots that take into account the wind speed and direction, but you want to find the direction from which the wind with the highest _power_ is coming from. And this demands some functional program and a bit of math. Oh and Wikipedia!
 
 While faster winds have faster speeds, air density plays an important role.
-
 
 `@instructions`
 - Read through [this](https://en.wikipedia.org/wiki/Density_of_air#Humidity_(water_vapor)) Wikipedia section on the density of humid air.
 - Read through [this](https://en.wikipedia.org/wiki/Wind_power#Wind_energy) Wikipedia section on calculating wind energy and power.
 - Click submit when you are done.
 
+`@hint`
+
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+
+```
 
 `@sct`
 ```{r}
 success_msg("Alright! Let's get to it!")
 ```
 
-
-
-
 ---
+
 ## R Functions - Example
 
 ```yaml
@@ -44,6 +56,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 In case you are unfamiliar with functions, you will create a basic function of __two inputs__ and a __single output__.
 Functions are created using `function(inputs)` like so:
 ```
@@ -54,11 +67,16 @@ example_function <- function(input) {
 This function returns double the value of the input. Notice that the code to calculate is nested inside the parenthesis `{}`
 
 `@instructions`
-
 - Create a function called `add_xyz`, that takes inputs `x`, `y` and `z` and returns the sum of all three when called.  
-- Call the function using any values of `x`, `y` and `z`.  
+- Call the function using any values of `x`, `y` and `z`.
+
+`@hint`
 
 
+`@pre_exercise_code`
+```{r}
+
+```
 
 `@sample_code`
 ```{r}
@@ -76,7 +94,6 @@ add_xyz <- function(x, y, z) {
 }
 ```
 
-
 `@sct`
 ```{r}
 test_object("add_xyz", incorrect_msg = "Something is wrong with `add_xyz`. Make sure you've used the correct values to the arguments in the function.")
@@ -85,19 +102,19 @@ test_error()
 success_msg("`Nice! Onwards to more relevant functions") 
 ```
 
-
 ---
+
 ## Calculating Air Density: Part 1
 
 ```yaml
 type: NormalExercise
-xp: 100
 key: 5e9efdfa1f
 lang: r
+xp: 100
 skills: 1
 ```
-Calculating air density is a bit of a hassle, but no worries! To find the wind power, you must already know the air density.
 
+Calculating air density is a bit of a hassle, but no worries! To find the wind power, you must already know the air density.
 
 `@instructions`
 Create a function called `calculate_air_density` that takes an input `df` and returns the variable `air_density` (you do not have to define it yet).  
@@ -107,19 +124,15 @@ Inside the function you may specify the constants you encountered on Wikipedia e
 - $ R_d = 287.058 $ as `R_d`
 - $ R_v = 461.495 $ as `R_v`
 
-
-
 `@hint`
 
 
-
 `@pre_exercise_code`
-
 ```{r}
 
 ```
-`@sample_code`
 
+`@sample_code`
 ```{r}
 ___ <- ___(df) {
     
@@ -137,6 +150,7 @@ ___ <- ___(df) {
     return(air_density)
 }
 ```
+
 `@solution`
 ```{r}
 calculate_air_density <- function(df){
@@ -155,6 +169,7 @@ calculate_air_density <- function(df){
     return(air_density)
   }
 ```
+
 `@sct`
 ```{r}
 test_object("calculate_air_density", incorrect_msg = "Something is wrong with your function. Make sure you've used the correct values to the arguments in the function.")
@@ -163,10 +178,8 @@ test_error()
 success_msg("`Nice! Time for the second part.") 
 ```
 
-
-
-
 ---
+
 ## Calculating Air Density: Part 2
 
 ```yaml
@@ -176,6 +189,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 To continue, there are some variable you can calculate from data that you already have! Scroll down to Part 2.
 
 `@instructions`
@@ -184,6 +198,7 @@ To continue, there are some variable you can calculate from data that you alread
 3. Find the absolute pressure `p` by multiply the `bp` column by `100` to obtain the pressure in __Pascals__. (line 23)
 
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -261,10 +276,8 @@ test_error()
 success_msg("`Cool! You are half-way there!") 
 ```
 
-
-
-
 ---
+
 ## Calculating Air Density: Part 3
 
 ```yaml
@@ -274,6 +287,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 Three equations before the final one.
 Scroll down to Part 3.
 
@@ -286,8 +300,8 @@ Assign it to the variable `p_sat`.
 
 Note: it is multiplied by 100 to convert it to Pascals, also T is in Celsius not in Kelvin.
 
-
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -386,11 +400,8 @@ test_error()
 success_msg("`Nice! One more part to go!") 
 ```
 
-
-
-
-
 ---
+
 ## Calculating Air Density: Part 4
 
 ```yaml
@@ -400,18 +411,19 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 Finally, the equation for air density:
 
 $ \rho_{\,\mathrm{humid~air}} = \frac{p\_{d}}{R\_dT} + \frac{p\_{v}}{R\_vT}$
 
 `@instructions`
-
 - Implement the equation in code and assign it to the variable `air_density`. (line 39)
 - Run the function on the dataframe `df`. (line 46)
 
 Note: T is in Kelvin not Celsius. Remember, you assigned this to a certain variable.
 
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -537,6 +549,7 @@ success_msg("That's some good work! Next you will calculate the wind power!")
 ```
 
 ---
+
 ## Calculating Wind Power
 
 ```yaml
@@ -548,6 +561,7 @@ skills: 1
 ```
 
 
+
 `@instructions`
 - Run `calculate_air_density` on `df` and assign it to the variable name `air_density`.
 - Write a function called `calculate_wind_power`, with inputs  `area`, `air_density` `wind_speed` and output `wind_power`. Use the equation below as your guide:
@@ -555,7 +569,7 @@ skills: 1
 $$ P = \frac{1}{2}A \rho v^3 $$
 
 - Call the function and save the result to a variable called `wind_power`. 
-Note: Use `A = 1` when calling the function at the end as you do not have a collecting area (wind turbine). So this will measure the estimated wind power incident on 1 meter squared of area. 
+Note: Use `A = 1` when calling the function at the end as you do not have a collecting area (wind turbine). So this will measure the estimated wind power incident on 1 meter squared of area.
 
 `@hint`
 Don't forget the `return()` statement!
@@ -655,9 +669,8 @@ test_error()
 success_msg("Time for plotting!") 
 ```
 
-
-
 ---
+
 ## Plotting the Windrose: Part 1
 
 ```yaml
@@ -667,12 +680,16 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 You will now prepare the data for the windrose.
 
 `@instructions`
 - Import the library `openair`
 - Define a variable `z`, which consists of a string of colors in this order, `"dodgerblue4", "gray", "firebrick"`
 - Create a dataframe `wind_df` that contains only two columns `wind_power` (you calculated this in the last exercise) and `wind_direction` (already present in the dataframe `df` as `wd`)
+
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -783,8 +800,8 @@ test_error()
 success_msg("Time for plotting!")
 ```
 
-
 ---
+
 ## Plotting the Windrose: Part 2
 
 ```yaml
@@ -797,9 +814,8 @@ skills: 1
 
 Traditionally, using the `windRose()` function demands `ws` and a `wd` arguments, short for wind speed and wind direction respectively. But keep in mind that you want to plot the wind power!
 
-
 `@instructions`
-- Use the `windRose()` function appropriately. Pass `wind_power` into the `ws` argument and `wind_direction` into `wd`. 
+- Use the `windRose()` function appropriately. Pass `wind_power` into the `ws` argument and `wind_direction` into `wd`.
 
 `@hint`
 By now you should know that your hint comes from your own research `?windRose()`.
@@ -906,6 +922,7 @@ success_msg("Time for plotting!")
 ```
 
 ---
+
 ## Conclusion
 
 ```yaml
@@ -918,13 +935,16 @@ skills: 1
 
 Where is the wind with the highest power coming from?
 
-`@instructions`
+`@possible_answers`
 Calculate the median humidity of the last day and select the correct statement.
 
 1. North
 2. South-East
 3. [South-West]
 4. North-West
+
+`@hint`
+
 
 `@pre_exercise_code`
 ```{r}
